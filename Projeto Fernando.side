@@ -1,0 +1,3817 @@
+{
+  "id": "1dcc91a3-de0c-4369-97c0-45511713d5a6",
+  "version": "2.0",
+  "name": "Projeto Fernando",
+  "url": "https://mantis.saojudas.base2.com.br/",
+  "tests": [{
+    "id": "21a42cfe-d9a6-4a0b-a1d3-035887cc7d28",
+    "name": "01 - Realizar Login",
+    "commands": [{
+      "id": "35ff6993-9cdc-4efc-a11b-81f5635c1818",
+      "comment": "1. Acessar página ",
+      "command": "open",
+      "target": "/login_page.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "32392f41-97ec-40c9-971b-9ad403776bc6",
+      "comment": "2. Preencha campo \"USUARIO\" com \"nome de usuario\"",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/label/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "Murilo"
+    }, {
+      "id": "bc015393-087a-4e1d-beb2-837cdb6c9c60",
+      "comment": "3. Clicar em \"Entrar\"",
+      "command": "click",
+      "target": "css=.width-40",
+      "targets": [
+        ["css=.width-40", "css:finder"],
+        ["xpath=//input[@value='Entrar']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f4cf0e2-afad-4446-993f-2df3dea9fcaf",
+      "comment": "4. Preencha campo \"SENHA\" com \"senha de usuario\"",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/label/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "Mu.81726559"
+    }, {
+      "id": "68f31560-88ff-4c99-b4c2-ae6dadf1025d",
+      "comment": "5. desmarcar \"Somente permitir que sua sessão seja utilizada a partir deste endereço IP.\"",
+      "command": "uncheck",
+      "target": "id=remember-login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ed45321a-bcaf-48bc-9581-7da8a6cb7c64",
+      "comment": "6. desmarcar a opção \"Mantenha-me conectado(a)\"",
+      "command": "uncheck",
+      "target": "id=secure-session",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e77d1802-2cde-4437-8298-ec10377651be",
+      "comment": "7. Clicar em \"Entrar\"",
+      "command": "click",
+      "target": "css=.width-40",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cb328d64-fea8-456f-89b5-5731d2e9f8d7",
+      "comment": "Validação (Usuario autenticado)",
+      "command": "assertText",
+      "target": "linkText=Murilo ( murilohara.6559@aluno.saojudas.br )",
+      "targets": [],
+      "value": "Murilo ( murilohara.6559@aluno.saojudas.br )"
+    }]
+  }, {
+    "id": "b475ed60-b4aa-4826-828e-fba354c9f97e",
+    "name": "06 - Registro de resoluções de bugs apenas com uma tarefa selecionada",
+    "commands": [{
+      "id": "e6003009-4d3f-4a25-af84-ebbfd7b43a89",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "66bf7c52-67ee-43b9-b737-0c4c3d700bd0",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d41969f-6c43-48e6-8a39-67ba5f18a827",
+      "comment": "2. Preencha campo \"action\" com \"Resolver\" ",
+      "command": "select",
+      "target": "name=action",
+      "targets": [],
+      "value": "index=5"
+    }, {
+      "id": "58085d3e-aa72-4565-ac65-8dc8421b48db",
+      "comment": "3. Marque uma atividade ",
+      "command": "click",
+      "target": "css=.checkbox .lbl",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a29b5b4e-0d71-467c-80cd-8d4f93f16707",
+      "comment": "4. Clique em \"OK\"",
+      "command": "click",
+      "target": "css=.form-inline > .btn:nth-child(3)",
+      "targets": [
+        ["css=.form-inline > .btn:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='OK']", "xpath:attributes"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc50208f-a232-4527-bede-01de898d2ad7",
+      "comment": "5. Preencha campo \"Escolher resolução das tarefas\" com \"corrigido\" ",
+      "command": "select",
+      "target": "name=resolution",
+      "targets": [
+        ["name=resolution", "name"],
+        ["css=.input-sm", "css:finder"],
+        ["xpath=//select[@name='resolution']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div/div/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "index=1"
+    }, {
+      "id": "4041ebc6-4f5f-4135-940e-c30c1a7f1c4a",
+      "comment": "6. Preencha campo \"Adicionar Anotação\" com \"O bug registrado foi corrigido\" ",
+      "command": "type",
+      "target": "id=bugnote_text",
+      "targets": [
+        ["id=bugnote_text", "id"],
+        ["name=bugnote_text", "name"],
+        ["css=#bugnote_text", "css:finder"],
+        ["xpath=//textarea[@id='bugnote_text']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div/div/table/tbody/tr[2]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "O bug registrado foi corrigido"
+    }, {
+      "id": "1ab9372b-a5a6-4cfd-8e0d-9cf5df082008",
+      "comment": "7. Clica em \"Resolver Tarefas\"",
+      "command": "click",
+      "target": "css=.btn-white",
+      "targets": [
+        ["css=.btn-white", "css:finder"],
+        ["xpath=//input[@value='Resolver Tarefas']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "aecede41-c84c-4f9e-adc4-5edb29b1e482",
+    "name": "30 - Exportar tarefa  para arquivo .CSV",
+    "commands": [{
+      "id": "9078ef12-e683-4dfb-a7c7-770b7136d7fa",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2fbf2a5-e63f-4aca-8440-a8869d6dbefd",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "249243ec-3a5d-4360-a7aa-ebc5ed6cf1be",
+      "comment": "3. Clicar em exportar para arquivo .CSV",
+      "command": "click",
+      "target": "linkText=Exportar para Arquivo CSV",
+      "targets": [
+        ["linkText=Exportar para Arquivo CSV", "linkText"],
+        ["css=.btn-toolbar > .btn-group > .btn:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Exportar para Arquivo CSV')]", "xpath:link"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div/div/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'csv_export.php')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Exportar para Arquivo CSV')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "4b253309-e5e8-4adb-9c06-f714987c0c3e",
+    "name": "29 - Exportar tarefa  para arquivo Excel",
+    "commands": [{
+      "id": "01e1eca9-a4df-44ca-89db-48a386ab8f2d",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "407ee058-410f-4964-bca4-b00c0136271f",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee143d93-39e4-472c-b221-d8e78657f833",
+      "comment": "3. Clicar em exportar para arquivo Excel",
+      "command": "click",
+      "target": "linkText=Exportação para Excel",
+      "targets": [
+        ["linkText=Exportação para Excel", "linkText"],
+        ["css=.btn-group > .btn:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Exportação para Excel')]", "xpath:link"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div/div/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'excel_xml_export.php')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Exportação para Excel')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "e8010f36-5dda-49eb-94f3-0ae0e850dc24",
+    "name": "26 - Ordenar as tarefas ",
+    "commands": [{
+      "id": "98ce29e1-11dc-4833-aa31-5f47c2a4b64f",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8f538ef2-124b-4c52-9988-01da8836b82d",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "51e688d6-7b7a-49b0-8e02-09958045f082",
+      "comment": "2. Clicar em todas as colunas na tarefa desejada (p)",
+      "command": "click",
+      "target": "linkText=P",
+      "targets": [
+        ["linkText=P", "linkText"],
+        ["css=.column-priority > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'P')])[8]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/thead/tr/th[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'view_all_set.php?sort_add=priority&dir_add=ASC&type=2')]", "xpath:href"],
+        ["xpath=//th[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2fb0c0e4-74f7-442e-984d-987634c7ba92",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "153723a8-af37-404e-ba61-6a7b6dbe98d9",
+      "comment": "2. Clicar em todas as colunas na tarefa desejada (p)",
+      "command": "click",
+      "target": "linkText=Núm",
+      "targets": [
+        ["linkText=P", "linkText"],
+        ["css=.column-priority > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'P')])[8]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/thead/tr/th[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'view_all_set.php?sort_add=priority&dir_add=ASC&type=2')]", "xpath:href"],
+        ["xpath=//th[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ccedc9af-1bf6-4839-b411-6d171da010d8",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1380c095-a80f-442d-a89f-94fd0bccc052",
+      "comment": "2. Clicar em todas as colunas na tarefa desejada (categoria)",
+      "command": "click",
+      "target": "css=.column-category > a",
+      "targets": [
+        ["css=.column-category > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Categoria')])[2]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/thead/tr/th[7]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'view_all_set.php?sort_add=category_id&dir_add=ASC&type=2')]", "xpath:href"],
+        ["xpath=//th[7]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "628e06dc-f305-4cd0-9caf-c73ddd9193fa",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1cc49627-1bbe-4e37-850f-29255dd177e2",
+      "comment": "2. Clicar em todas as colunas na tarefa desejada (gravidade)",
+      "command": "click",
+      "target": "css=.column-severity > a",
+      "targets": [
+        ["css=.column-severity > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Gravidade')])[2]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/thead/tr/th[8]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'view_all_set.php?sort_add=severity&dir_add=ASC&type=2')]", "xpath:href"],
+        ["xpath=//th[8]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f63363d-8d13-4375-b28e-07dacb12ad81",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb3dfcc2-8115-4593-b1f8-ee9f6b95e108",
+      "comment": "2. Clicar em todas as colunas na tarefa desejada (estado)",
+      "command": "click",
+      "target": "css=.column-status > a",
+      "targets": [
+        ["css=.column-status > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Estado')])[2]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/thead/tr/th[9]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'view_all_set.php?sort_add=status&dir_add=ASC&type=2')]", "xpath:href"],
+        ["xpath=//th[9]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c51d1144-40bc-40fc-897a-ea6e5a89ade2",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d6c7f1d3-7120-4be1-92ad-92c24ac32396",
+      "comment": "2. Clicar em todas as colunas na tarefa desejada (atualizado)",
+      "command": "click",
+      "target": "linkText=Atualizado",
+      "targets": [
+        ["linkText=Atualizado", "linkText"],
+        ["css=.column-last-modified > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Atualizado')]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/thead/tr/th[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'view_all_set.php?sort_add=last_updated&dir_add=ASC&type=2')]", "xpath:href"],
+        ["xpath=//th[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Atualizado')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7224ea30-ec04-46de-bb37-3fc1c72f193b",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3eb41069-14a1-42ed-bdf3-b924c5f49217",
+      "comment": "2. Clicar em todas as colunas na tarefa desejada (resumo)",
+      "command": "click",
+      "target": "linkText=Resumo",
+      "targets": [
+        ["linkText=Resumo", "linkText"],
+        ["css=.column-summary > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Resumo')]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/thead/tr/th[11]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'view_all_set.php?sort_add=summary&dir_add=ASC&type=2')]", "xpath:href"],
+        ["xpath=//th[11]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Resumo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "b24638c6-0210-4d63-8538-b9ccddeed6ea",
+    "name": "25 - Pesquisar tarefa",
+    "commands": [{
+      "id": "a73c9eaa-5d8b-4d93-a6f6-ec96d36cc5e9",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "589317a7-e2b7-4a04-a09c-b429be4fb2f9",
+      "comment": "2. Preencher o camop \"Pesquisar\" com a tarefa desejada para pesquisa",
+      "command": "type",
+      "target": "name=bug_id",
+      "targets": [],
+      "value": "1"
+    }, {
+      "id": "01e1bbd8-7d67-47a9-910f-4ba4a6377ec7",
+      "comment": "2. Pressionar \"Enter\"",
+      "command": "sendKeys",
+      "target": "name=bug_id",
+      "targets": [],
+      "value": "${KEY_ENTER}"
+    }]
+  }, {
+    "id": "61877d0b-4cbb-4fc5-b414-f09681b5a1b5",
+    "name": "24 - Monitorar Tarefa",
+    "commands": [{
+      "id": "b4d84ae1-5f9b-4e64-a1b6-8bbe9914ec03",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8f195ee4-a0ab-4a96-ad04-16011b41024d",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e5eb4e0-0dce-47a3-929e-0baf2b4990b4",
+      "comment": "2. Clicar na tarefa desejada",
+      "command": "click",
+      "target": "css=tbody > tr:nth-child(1) > .column-id > a",
+      "targets": [
+        ["css=tbody > tr:nth-child(1) > .column-id > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'0000053')])[2]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/view.php?id=53')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/table/tbody/tr/td[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b620f26-4b89-4f81-88b2-412524948f4c",
+      "comment": "3. Clicar em \"Monitorar\"",
+      "command": "click",
+      "target": "css=.pull-left:nth-child(4) .btn",
+      "targets": [
+        ["css=.pull-left:nth-child(4) .btn", "css:finder"],
+        ["xpath=//input[@value='Monitorar']", "xpath:attributes"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tfoot/tr/td/div/div[4]/form/fieldset/input[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/form/fieldset/input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "42f942d5-ca19-46a1-aea6-3b7421609d12",
+      "comment": "Validar ",
+      "command": "assertText",
+      "target": "css=#monitoring .widget-title",
+      "targets": [
+        ["css=#monitoring .widget-title", "css:finder"],
+        ["xpath=//div[@id='monitoring']/div/h4", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/h4", "xpath:position"]
+      ],
+      "value": "Usuários monitorando esta tarefa"
+    }, {
+      "id": "ecc248f6-17bf-44f4-8152-6b29728a20ef",
+      "comment": "Validar ",
+      "command": "assertText",
+      "target": "css=td > div > a:nth-child(1)",
+      "targets": [
+        ["css=td > div > a:nth-child(1)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Murilo')])[3]", "xpath:link"],
+        ["xpath=//div[@id='monitoring']/div[2]/div/div/table/tbody/tr/td/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://mantis.saojudas.base2.com.br/view_user_page.php?id=30')])[2]", "xpath:href"],
+        ["xpath=//td/div/a", "xpath:position"]
+      ],
+      "value": "Murilo"
+    }]
+  }, {
+    "id": "28615eba-78c4-4833-976b-a0a50714f552",
+    "name": "23 - Remover usuário do monitoramento",
+    "commands": [{
+      "id": "375a6e39-a069-47d5-bbcc-d6940dbd5784",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7c627375-c676-4ff2-ac0c-4233cfb305fa",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4fdf99b5-63c3-4989-82e3-70504f5b11d3",
+      "comment": "2. Clicar na tarefa desejada",
+      "command": "click",
+      "target": "css=tbody > tr:nth-child(1) > .column-id > a",
+      "targets": [
+        ["css=tbody > tr:nth-child(1) > .column-id > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'0000053')])[2]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/view.php?id=53')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/table/tbody/tr/td[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9641c847-e735-4962-b292-04df7d0c73f3",
+      "comment": "3. Clicar no campo \"x\" na sessão \" Usuários monitorando esta tarefa\"",
+      "command": "click",
+      "target": "css=.fa-times",
+      "targets": [
+        ["css=.fa-times", "css:finder"],
+        ["xpath=//div[@id='monitoring']/div[2]/div/div/table/tbody/tr/td/div/a[2]/i", "xpath:idRelative"],
+        ["xpath=//a[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "296a5a32-a582-4d57-b76b-c9b61575f99d",
+      "comment": "Validar ",
+      "command": "assertText",
+      "target": "css=#monitoring .widget-title",
+      "targets": [
+        ["css=#monitoring .widget-title", "css:finder"],
+        ["xpath=//div[@id='monitoring']/div/h4", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/h4", "xpath:position"]
+      ],
+      "value": "Usuários monitorando esta tarefa"
+    }, {
+      "id": "5f844195-256f-429a-9ae8-2e0a23d66913",
+      "comment": "Validar ",
+      "command": "assertText",
+      "target": "css=tr:nth-child(1) > td:nth-child(2) > div:nth-child(1)",
+      "targets": [
+        ["css=tr:nth-child(1) > td:nth-child(2) > div:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='monitoring']/div[2]/div/div/table/tbody/tr/td/div", "xpath:idRelative"],
+        ["xpath=//tbody/tr/td/div", "xpath:position"]
+      ],
+      "value": "Não há usuários monitorando esta tarefa."
+    }]
+  }, {
+    "id": "9172a435-d602-4cc0-b97e-dd76491510df",
+    "name": "14 - Atualizar Gravidade ",
+    "commands": [{
+      "id": "49ffa593-4c48-4833-9bc3-558b95ee35b0",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "063c5bb4-cd8a-4695-ba2b-febc3f04aa22",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c2742b3-4fcf-42da-8158-6f710bd7d967",
+      "comment": "2. Preencha campo \"action\" com \"Atualizar Gravidade\" ",
+      "command": "select",
+      "target": "name=action",
+      "targets": [],
+      "value": "index=7"
+    }, {
+      "id": "97661c0e-4df1-4b19-9bcc-3aaf554fc7f1",
+      "comment": "checar usuario ----------------------",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .lbl",
+      "targets": [
+        ["css=tr:nth-child(1) .lbl", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td/div/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ffb7363-b946-4529-a463-5cf71ec1498c",
+      "comment": "4. Clique em \"OK\"",
+      "command": "click",
+      "target": "css=.form-inline > .btn:nth-child(3)",
+      "targets": [
+        ["css=.form-inline > .btn:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='OK']", "xpath:attributes"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6e92ae56-e6c9-4fb9-9884-ce7eb3986e78",
+      "comment": "5. Preencha campo \"Escolha a gravidade da tarefa\" com \"grande\"",
+      "command": "select",
+      "target": "name=severity",
+      "targets": [
+        ["name=severity", "name"],
+        ["css=.input-sm", "css:finder"],
+        ["xpath=//select[@name='severity']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div/div/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "index=5"
+    }, {
+      "id": "db3b6e85-c70d-4016-9977-8a2e5ae35d00",
+      "comment": "6. Clica em \"Atualizar Gravidade\"",
+      "command": "click",
+      "target": "css=.btn-white",
+      "targets": [
+        ["css=.btn-white", "css:finder"],
+        ["xpath=//input[@value='Atualizar Gravidade']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dbc8f410-9c9e-4cf7-8f29-9b8a55005cc3",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "css=tbody .column-severity",
+      "targets": [
+        ["css=tbody .column-severity", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[8]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/table/tbody/tr/td[8]", "xpath:position"],
+        ["xpath=//td[contains(.,'pequeno')]", "xpath:innerText"]
+      ],
+      "value": "grande"
+    }]
+  }, {
+    "id": "9998454f-ffcb-4b85-8f51-9e2f1fd24bff",
+    "name": "13 - Atualizar Prioridade",
+    "commands": [{
+      "id": "0c1ea87a-25ff-419b-8810-382aef15bd65",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c0634ade-b994-4cf0-bb82-de5d426bfb81",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c88bd76c-ef6a-49ad-ac86-b10db2bb19f8",
+      "comment": "2. Preencha campo \"action\" com \"Atualizar Prioridade\"",
+      "command": "select",
+      "target": "name=action",
+      "targets": [],
+      "value": "index=6"
+    }, {
+      "id": "ce899318-dcaf-4878-a821-8613950cfc29",
+      "comment": "checar usuario ----------------------",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .lbl",
+      "targets": [
+        ["css=tr:nth-child(1) .lbl", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td/div/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "72bacd76-d4b9-4375-9221-1628c1cb6801",
+      "comment": "4. Clique em \"OK\"",
+      "command": "click",
+      "target": "css=.form-inline > .btn:nth-child(3)",
+      "targets": [
+        ["css=.form-inline > .btn:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='OK']", "xpath:attributes"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc629da5-e3c7-495a-b672-5f8fc0d6cff2",
+      "comment": "5. Preencha campo \"Escolher prioridade das tarefas\" com \"urgente\"",
+      "command": "select",
+      "target": "name=priority",
+      "targets": [
+        ["name=priority", "name"],
+        ["css=.input-sm", "css:finder"],
+        ["xpath=//select[@name='priority']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div/div/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "index=4"
+    }, {
+      "id": "dbfeff68-a579-4cf7-8aae-0ebb848bd00f",
+      "comment": "6. Clica em \"Atualizar Prioridade\"",
+      "command": "click",
+      "target": "css=.btn-white",
+      "targets": [
+        ["css=.btn-white", "css:finder"],
+        ["xpath=//input[@value='Atualizar Prioridade']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "66b460f4-009a-4d8c-a7a0-ee04ac1312e7",
+      "comment": "Abrir tarefa 1",
+      "command": "click",
+      "target": "css=tbody .column-id > a",
+      "targets": [
+        ["css=tbody .column-id > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'0000054')])[2]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/view.php?id=54')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/table/tbody/tr/td[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e883c9ec-96b3-4b8d-985b-5463b95fc1ae",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "css=.bug-priority:nth-child(2)",
+      "targets": [
+        ["css=.bug-priority:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[6]/td", "xpath:idRelative"],
+        ["xpath=//tr[6]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'urgente')]", "xpath:innerText"]
+      ],
+      "value": "urgente"
+    }]
+  }, {
+    "id": "0501df3f-5361-4c0a-a7da-1a29d98dbac0",
+    "name": "15 - Atualizar Status ",
+    "commands": [{
+      "id": "63e0fc3c-a206-407c-9ba2-d43ca5612c5e",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e4faca83-b3d5-4faf-8d82-9e4d49b7e520",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2de8c0a1-2417-4210-bde9-4ea45b2e4c15",
+      "comment": "2. Preencha campo \"action\" com \"Atualizar Status\" ",
+      "command": "select",
+      "target": "name=action",
+      "targets": [],
+      "value": "index=8"
+    }, {
+      "id": "3d9f7beb-71d5-4f40-9159-a4c8c1a5104f",
+      "comment": "checar usuario ----------------------",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .lbl",
+      "targets": [
+        ["css=tr:nth-child(1) .lbl", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td/div/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6706ce35-3a5d-44e8-bc76-ac08c92203be",
+      "comment": "4. Clique em \"OK\"",
+      "command": "click",
+      "target": "css=.form-inline > .btn:nth-child(3)",
+      "targets": [
+        ["css=.form-inline > .btn:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='OK']", "xpath:attributes"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7cb2bad0-17a0-4ba3-b6dc-2a8869cf0140",
+      "comment": "5. Preencha campo \"Escolher status das tarefas\" com \"confirmado\"",
+      "command": "select",
+      "target": "name=status",
+      "targets": [
+        ["name=status", "name"],
+        ["css=.input-sm", "css:finder"],
+        ["xpath=//select[@name='status']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div/div/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "index=3"
+    }, {
+      "id": "43d347c5-5370-4591-a0af-766063a0c2a1",
+      "comment": "6. Clica em \"Atualizar Status\"",
+      "command": "click",
+      "target": "css=.btn-white",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "51399fa7-6ed2-420c-9277-fc56a3a80936",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "css=.align-left > span",
+      "targets": [
+        ["css=.align-left > span", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[9]/div/span", "xpath:idRelative"],
+        ["xpath=//td[9]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'confirmado')]", "xpath:innerText"]
+      ],
+      "value": "confirmado"
+    }]
+  }, {
+    "id": "89448aa5-5e0e-4c24-a7ca-fa54f64ce366",
+    "name": "16 - Atualizar Categoria ",
+    "commands": [{
+      "id": "ac0c50ba-f48a-460e-92e7-62e622855d13",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "943f9e6d-345b-48f3-9025-1d77972c206b",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1e6da25-f889-4e35-aa01-2cd70ddbc854",
+      "comment": "2. Preencha campo \"action\" com \"Atualizar Categoria\" ",
+      "command": "select",
+      "target": "name=action",
+      "targets": [],
+      "value": "index=9"
+    }, {
+      "id": "52d5371d-f0d9-41f1-b665-21a260706ed4",
+      "comment": "checar usuario ----------------------",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .lbl",
+      "targets": [
+        ["css=tr:nth-child(1) .lbl", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td/div/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "25d6f621-ff79-4b68-ae88-2aeec06bf7df",
+      "comment": "4. Clique em \"OK\"",
+      "command": "click",
+      "target": "css=.form-inline > .btn:nth-child(3)",
+      "targets": [
+        ["css=.form-inline > .btn:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='OK']", "xpath:attributes"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea4aa839-9de4-4887-9a36-936d317c54b3",
+      "comment": "5. Preencha campo \"Escolher a categoria da tarefa\" com \"[Todos os Projetos] General\"",
+      "command": "select",
+      "target": "name=category",
+      "targets": [
+        ["name=category", "name"],
+        ["css=.input-sm", "css:finder"],
+        ["xpath=//select[@name='category']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div/div/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'[Todos os Projetos] General')]", "xpath:innerText"]
+      ],
+      "value": "index=0"
+    }, {
+      "id": "991ad8cf-0aa4-4563-9edc-628fe883e604",
+      "comment": "6. Clica em \"Atualizar Categoria\"",
+      "command": "click",
+      "target": "css=.btn-white",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "37d8747b-648b-4254-b5c8-3408b423a7c3",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "css=.column-category > .align-left",
+      "targets": [
+        ["css=.column-category > .align-left", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[7]/div", "xpath:idRelative"],
+        ["xpath=//td[7]/div", "xpath:position"]
+      ],
+      "value": "General"
+    }]
+  }, {
+    "id": "81957c35-dd3b-4250-8c97-4a758f06f35f",
+    "name": "17 - Atualizar Visibilidade",
+    "commands": [{
+      "id": "4cc140f0-5d7a-494e-8da2-c95a448a6285",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c9f92996-9da9-4873-976c-7c610a5881ca",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c1dff09-e860-4baa-9a73-1e712b520bb2",
+      "comment": "2. Preencha campo \"action\" com \"Atualizar Visibilidade\"",
+      "command": "select",
+      "target": "name=action",
+      "targets": [],
+      "value": "index=10"
+    }, {
+      "id": "a2ff338e-0cad-4b7c-b997-0af4a1222119",
+      "comment": "checar usuario ----------------------",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .lbl",
+      "targets": [
+        ["css=tr:nth-child(1) .lbl", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td/div/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d0ed1b6-72eb-4fdc-9a34-cde3945f0e25",
+      "comment": "4. Clique em \"OK\"",
+      "command": "click",
+      "target": "css=.form-inline > .btn:nth-child(3)",
+      "targets": [
+        ["css=.form-inline > .btn:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='OK']", "xpath:attributes"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ae243abf-5e8b-4907-9868-82190a7aac2d",
+      "comment": "5. Preencha campo \"Escolher visibilidade das tarefas\" com \"privado\"",
+      "command": "select",
+      "target": "name=view_status",
+      "targets": [
+        ["name=view_status", "name"],
+        ["css=.input-sm", "css:finder"],
+        ["xpath=//select[@name='view_status']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div/div/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "index=1"
+    }, {
+      "id": "32bfba9b-1c62-48d0-ad3f-2925333de3fa",
+      "comment": "6. Clica em \"Atualizar Visibilidade\"",
+      "command": "click",
+      "target": "css=.btn-white",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b0afa730-625a-410a-86a1-7edaebba3dd2",
+      "comment": "Abrir tarefa 1",
+      "command": "click",
+      "target": "css=tbody .column-id > a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "55a42b56-c717-47d6-bb08-fcfdc805cce0",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "css=.bug-header-data > .bug-view-status",
+      "targets": [
+        ["css=.bug-header-data > .bug-view-status", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[4]", "xpath:idRelative"],
+        ["xpath=//td[4]", "xpath:position"],
+        ["xpath=//td[contains(.,'público')]", "xpath:innerText"]
+      ],
+      "value": "privado"
+    }]
+  }, {
+    "id": "63812b9d-487b-456b-a8f4-07dedf1eccf7",
+    "name": "08 - Mover bug registrado para outro grupo apenas com uma tarefa selecionada",
+    "commands": [{
+      "id": "5f3c9daa-5e5a-42b6-83eb-54b0215d7e8d",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "989f2cfd-eeec-4c0a-bbcc-6d73f7a9ce20",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "675e7f94-6840-40e9-bc13-2f43e16e34c5",
+      "comment": "2. Preencha campo \"action\" com \"Mover\" ",
+      "command": "select",
+      "target": "name=action",
+      "targets": [
+        ["name=action", "name"],
+        ["css=.input-sm:nth-child(2)", "css:finder"],
+        ["xpath=//select[@name='action']", "xpath:attributes"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div[2]/div[2]/div/select", "xpath:idRelative"],
+        ["xpath=//div/select", "xpath:position"]
+      ],
+      "value": "index=0"
+    }, {
+      "id": "93222076-079e-415a-8c39-ec5463f087c6",
+      "comment": "checar usuario ----------------------",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .lbl",
+      "targets": [
+        ["css=tr:nth-child(1) .lbl", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td/div/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3a34db6-82e4-44c1-bc6a-a8178ebd8895",
+      "comment": "4. Clique em \"OK\"",
+      "command": "click",
+      "target": "css=.form-inline > .btn:nth-child(3)",
+      "targets": [
+        ["css=.form-inline > .btn:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='OK']", "xpath:attributes"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "700febe9-6cdd-485b-a766-54454d22f360",
+      "comment": "5. Preencha campo \"Mover tarefas para\" com \"Grupo 3\" ",
+      "command": "select",
+      "target": "name=project_id",
+      "targets": [
+        ["name=project_id", "name"],
+        ["css=.input-sm", "css:finder"],
+        ["xpath=//select[@name='project_id']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div/div/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Grupo3')]", "xpath:innerText"]
+      ],
+      "value": "index=0"
+    }, {
+      "id": "3d61fac5-5584-4c47-b8ff-a2f3927bf413",
+      "comment": "6. Clica em \"Mover Tarefas\"",
+      "command": "click",
+      "target": "css=.btn-white",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3b76a7f6-53fb-4a1f-944c-122e7ee7d81e",
+      "comment": "Abrir tarefa 1",
+      "command": "click",
+      "target": "css=tbody .column-id > a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8f600aab-ca24-41b9-96fd-709a9c31d0dd",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "css=.bug-header-data > .bug-project",
+      "targets": [
+        ["css=.bug-header-data > .bug-project", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]", "xpath:idRelative"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Grupo3')]", "xpath:innerText"]
+      ],
+      "value": "Grupo3"
+    }]
+  }, {
+    "id": "426d26fd-5fb1-4cbb-a2e5-aa2da9456c3e",
+    "name": "09 - Atribuir bug registrado para outro responsavel",
+    "commands": [{
+      "id": "fc52af61-d739-4e18-8844-23c7aee7d8a4",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "af0603eb-9d21-45b0-80ae-dd5d2f9b1748",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b1678c9-dd72-48d4-a11a-a20642906125",
+      "comment": "2. Preencha campo \"action\" com \"Atribuir\" ",
+      "command": "select",
+      "target": "name=action",
+      "targets": [],
+      "value": "index=2"
+    }, {
+      "id": "0938c5be-94fc-4e14-a2c6-7bbe4e086cc6",
+      "comment": "checar usuario ----------------------",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .lbl",
+      "targets": [
+        ["css=tr:nth-child(1) .lbl", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td/div/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eac2fcb4-0913-499b-9027-7439d06187de",
+      "comment": "4. Clique em \"OK\"",
+      "command": "click",
+      "target": "css=.form-inline > .btn:nth-child(3)",
+      "targets": [
+        ["css=.form-inline > .btn:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='OK']", "xpath:attributes"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc2ccecb-748b-4251-bdbe-a3a106f44d47",
+      "comment": "5. Preencha campo \"Atribuir tarefas a\" com \"Mateus\" ",
+      "command": "select",
+      "target": "name=assign",
+      "targets": [
+        ["name=assign", "name"],
+        ["css=.input-sm", "css:finder"],
+        ["xpath=//select[@name='assign']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div/div/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "index=2"
+    }, {
+      "id": "23ad3c13-05b5-4d9a-9907-33c09c689487",
+      "comment": "6. Clica em \"Atribuir Tarefas\"",
+      "command": "click",
+      "target": "css=.btn-white",
+      "targets": [
+        ["css=.btn-white", "css:finder"],
+        ["xpath=//input[@value='Atualizar Prioridade']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "352fe95c-4465-4bd1-8b98-5982e9076d93",
+      "comment": "Abrir tarefa 1",
+      "command": "//click",
+      "target": "css=tbody .column-id > a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c41d52c2-06b5-4294-89cb-794c4309244b",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "linkText=Mateus",
+      "targets": [
+        ["linkText=Mateus", "linkText"],
+        ["css=.align-left > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Mateus')]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[9]/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://mantis.saojudas.base2.com.br/view_user_page.php?id=4')]", "xpath:href"],
+        ["xpath=//td[9]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Mateus')]", "xpath:innerText"]
+      ],
+      "value": "Mateus"
+    }, {
+      "id": "c07d3996-aef6-4140-919b-c5a20b4a3c3c",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "css=.align-left > span",
+      "targets": [
+        ["css=.align-left > span", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[9]/div/span", "xpath:idRelative"],
+        ["xpath=//td[9]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'atribuído')]", "xpath:innerText"]
+      ],
+      "value": "atribuído "
+    }]
+  }, {
+    "id": "b0322c5d-720d-4ae9-b0fe-aad3c5af434d",
+    "name": "10 - Fechar bug registrado",
+    "commands": [{
+      "id": "4de0e4e2-260a-4653-9706-b2d6ffa5ee1f",
+      "comment": "Requisitos: É obrigatório ter APENAS UMA tarefa existente",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7bb80913-f0a3-4770-a63f-3ff04e00cfcb",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5d196d6d-a5b4-47c9-b9d1-ea751309bb44",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f64b7f68-fc2e-4070-8a89-f9062fdee41c",
+      "comment": "2. Preencha campo \"action\" com \"Fechar\"",
+      "command": "select",
+      "target": "name=action",
+      "targets": [],
+      "value": "index=3"
+    }, {
+      "id": "2d5f64b5-6f5d-4316-95b6-a235a3d4b4c5",
+      "comment": "checar usuario ----------------------",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .lbl",
+      "targets": [
+        ["css=tr:nth-child(1) .lbl", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td/div/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f90c31b4-9618-45d0-b2a2-9e5ee526eb78",
+      "comment": "4. Clique em \"OK\"",
+      "command": "click",
+      "target": "css=.form-inline > .btn:nth-child(3)",
+      "targets": [
+        ["css=.form-inline > .btn:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='OK']", "xpath:attributes"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6bea3d0a-95a0-4c27-b5cb-46879239869a",
+      "comment": "5. Preencha campo \"Adicionar Anotação\" com \"Esse registro vai ser fechado por motivos de teste\" ",
+      "command": "type",
+      "target": "id=bugnote_text",
+      "targets": [],
+      "value": "Esse registro vai ser fechado por motivos de teste"
+    }, {
+      "id": "a59a6b24-c0d7-41b5-bff7-76127cf99134",
+      "comment": "6. Clica em \"Fechar Tarefas\"",
+      "command": "click",
+      "target": "css=.btn-white",
+      "targets": [
+        ["css=.btn-white", "css:finder"],
+        ["xpath=//input[@value='Atualizar Prioridade']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "493a23d7-0640-47fb-82b6-f17893801bf7",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "css=.badge",
+      "targets": [
+        ["css=.badge", "css:finder"],
+        ["xpath=//form[@id='bug_action']/div/div/h4/span", "xpath:idRelative"],
+        ["xpath=//h4/span", "xpath:position"],
+        ["xpath=//span[contains(.,'0 - 0 / 0')]", "xpath:innerText"]
+      ],
+      "value": "0 - 0 / 0"
+    }]
+  }, {
+    "id": "0f27c1c7-73da-4dd5-9c66-2d26a2d60e79",
+    "name": "11 - Apagar bug registrado",
+    "commands": [{
+      "id": "ee5392d7-9a2d-45f3-b922-d16106e63e3e",
+      "comment": "Requisitos: É obrigatório ter APENAS UMA tarefa existente",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f853febd-e649-44a6-986c-3bec6e3d3683",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "679fd271-a965-49f2-ac36-c40c4b325a85",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "33737463-35f8-41cb-be75-4d70d4f3c5ac",
+      "comment": "2. Preencha campo \"action\" com \"Apagar\"",
+      "command": "select",
+      "target": "name=action",
+      "targets": [],
+      "value": "index=4"
+    }, {
+      "id": "c36538a5-2e92-44b8-80be-3e517d5bfb91",
+      "comment": "checar usuario ----------------------",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .lbl",
+      "targets": [
+        ["css=tr:nth-child(1) .lbl", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td/div/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c45d6dfb-bd7b-4cd2-95be-cbe2b9716efa",
+      "comment": "4. Clique em \"OK\"",
+      "command": "click",
+      "target": "css=.form-inline > .btn:nth-child(3)",
+      "targets": [
+        ["css=.form-inline > .btn:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='OK']", "xpath:attributes"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "659f37a4-61f5-47ce-b630-e68d1a75554b",
+      "comment": "6. Clica em \"Apagar Tarefas\"",
+      "command": "click",
+      "target": "css=.btn-white",
+      "targets": [
+        ["css=.btn-white", "css:finder"],
+        ["xpath=//input[@value='Apagar Tarefas']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a794df0-2578-4cae-a973-50f34474e50a",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "css=.badge",
+      "targets": [
+        ["css=.badge", "css:finder"],
+        ["xpath=//form[@id='bug_action']/div/div/h4/span", "xpath:idRelative"],
+        ["xpath=//h4/span", "xpath:position"],
+        ["xpath=//span[contains(.,'0 - 0 / 0')]", "xpath:innerText"]
+      ],
+      "value": "0 - 0 / 0"
+    }]
+  }, {
+    "id": "31ef72a3-277a-47c1-9ac3-14624f3d87cf",
+    "name": "19 - Aplicar marcadores",
+    "commands": [{
+      "id": "a8827f2d-2ed2-4619-9ff1-60c0ee3ab269",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "644571c3-dd86-4c10-a1b7-b45a650fba3d",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "462f277a-7332-4bd6-8c88-267abb83bf88",
+      "comment": "2. Preencha campo \"action\" com \"Atualizar Marcadores\"",
+      "command": "select",
+      "target": "name=action",
+      "targets": [],
+      "value": "index=12"
+    }, {
+      "id": "50c7a627-cb91-404a-9f60-83d277c461e5",
+      "comment": "checar usuario ----------------------",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .lbl",
+      "targets": [
+        ["css=tr:nth-child(1) .lbl", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td/div/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "70cd415d-b30b-4dae-a786-807474d000c2",
+      "comment": "4. Clique em \"OK\"",
+      "command": "click",
+      "target": "css=.form-inline > .btn:nth-child(3)",
+      "targets": [
+        ["css=.form-inline > .btn:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='OK']", "xpath:attributes"],
+        ["xpath=//form[@id='bug_action']/div/div[2]/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b169cfd5-681f-4d5b-8dec-aadf84317de9",
+      "comment": "5. Preencha campo \"Aplicar Marcadores\" com o tag_select (\"Marcadores atuais\") ",
+      "command": "select",
+      "target": "id=tag_select",
+      "targets": [
+        ["id=tag_select", "id"],
+        ["name=tag_select", "name"],
+        ["css=#tag_select", "css:finder"],
+        ["xpath=//select[@id='tag_select']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div/div/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "index=0"
+    }, {
+      "id": "0af6a086-2436-4eab-ae2a-649f8f5cbf03",
+      "comment": "6. Preencha o campo \"(Separar por ',')\" com \"teste,marcador1,tag1,base2,Bug MantisBT\"",
+      "command": "type",
+      "target": "id=tag_string",
+      "targets": [
+        ["id=tag_string", "id"],
+        ["name=tag_string", "name"],
+        ["css=#tag_string", "css:finder"],
+        ["xpath=//input[@id='tag_string']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div/div/table/tbody/tr/td/input[2]", "xpath:idRelative"],
+        ["xpath=//td/input[2]", "xpath:position"]
+      ],
+      "value": "teste,marcador1,tag1,base2,Bug MantisBT"
+    }, {
+      "id": "e6c042cd-fc19-450d-97ad-c1a64e20cd6e",
+      "comment": "7. Clica em \"Aplicar\"",
+      "command": "//click",
+      "target": "css=.btn:nth-child(5)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1e5d49d8-6354-4855-a09b-1496a7f4dc44",
+      "comment": "8. Clica em \"Aplicar Marcadores\"",
+      "command": "click",
+      "target": "css=.btn-white:nth-child(1)",
+      "targets": [
+        ["css=.btn-white:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='Aplicar Marcadores']", "xpath:attributes"],
+        ["xpath=//div[@id='action-group-div']/form/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd183ae3-b74a-4fab-b66d-21b0d34f7d07",
+      "comment": "Abrir tarefa 1",
+      "command": "click",
+      "target": "css=tbody .column-id > a",
+      "targets": [
+        ["css=tbody .column-id > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'0000054')])[2]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/view.php?id=54')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/table/tbody/tr/td[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e54a773e-dd5a-4569-aee0-ad10e076658b",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "linkText=base2",
+      "targets": [
+        ["linkText=base2", "linkText"],
+        ["css=.btn-xs:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'base2')]", "xpath:link"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[12]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'tag_view_page.php?tag_id=6')]", "xpath:href"],
+        ["xpath=//tr[12]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'base2')]", "xpath:innerText"]
+      ],
+      "value": "base2"
+    }, {
+      "id": "19db4a46-1194-4b9a-9104-ad59f31422b8",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "linkText=teste",
+      "targets": [
+        ["linkText=teste", "linkText"],
+        ["css=.btn-xs:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'teste')]", "xpath:link"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[12]/td/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'tag_view_page.php?tag_id=7')]", "xpath:href"],
+        ["xpath=//td/a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'teste')]", "xpath:innerText"]
+      ],
+      "value": "teste"
+    }, {
+      "id": "8ea9f7ad-629d-40c9-8bbb-9f353314df6d",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "linkText=Bug MantisBT",
+      "targets": [
+        ["linkText=Bug MantisBT", "linkText"],
+        ["css=.btn-xs:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Bug MantisBT')]", "xpath:link"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[12]/td/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'tag_view_page.php?tag_id=3')]", "xpath:href"],
+        ["xpath=//td/a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Bug MantisBT')]", "xpath:innerText"]
+      ],
+      "value": "Bug MantisBT"
+    }, {
+      "id": "58abf03b-162c-4f45-b9aa-c6724639d9ee",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "linkText=marcador1",
+      "targets": [
+        ["linkText=marcador1", "linkText"],
+        ["css=.btn-xs:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'marcador1')]", "xpath:link"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[12]/td/a[5]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'tag_view_page.php?tag_id=8')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"],
+        ["xpath=//a[contains(.,'marcador1')]", "xpath:innerText"]
+      ],
+      "value": "marcador1"
+    }, {
+      "id": "c4d5599f-2d89-4eca-b5b7-04bcbbb627ce",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "linkText=tag1",
+      "targets": [
+        ["linkText=tag1", "linkText"],
+        ["css=.btn-xs:nth-child(7)", "css:finder"],
+        ["xpath=//a[contains(text(),'tag1')]", "xpath:link"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[12]/td/a[7]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'tag_view_page.php?tag_id=13')]", "xpath:href"],
+        ["xpath=//a[7]", "xpath:position"],
+        ["xpath=//a[contains(.,'tag1')]", "xpath:innerText"]
+      ],
+      "value": "tag1"
+    }]
+  }, {
+    "id": "b72da5d7-3fa9-41f3-98c8-ddf60524fc0b",
+    "name": "27 - Atualizar informações das tarefas ",
+    "commands": [{
+      "id": "8880fcf5-a895-4dc8-9377-c039b5107d8f",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a430439c-35ea-492b-b1f3-a9844fd720f6",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8b10c09-6c62-4119-95de-741de5d51993",
+      "comment": "2. Clicar em \"atualizar\" na tarefa desejada",
+      "command": "click",
+      "target": "css=.fa-pencil",
+      "targets": [
+        ["css=.fa-pencil", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[2]/a/i", "xpath:idRelative"],
+        ["xpath=//td[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5cbe76d-dc06-4612-853a-f03087c6f7db",
+      "comment": "3. Alterar categoria para [Todos os projetos] General",
+      "command": "select",
+      "target": "id=category_id",
+      "targets": [
+        ["id=category_id", "id"],
+        ["name=category_id", "name"],
+        ["css=#category_id", "css:finder"],
+        ["xpath=//select[@id='category_id']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[2]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'[Todos os Projetos] General')]", "xpath:innerText"]
+      ],
+      "value": "index=0"
+    }, {
+      "id": "436744ff-b2e3-4b02-bef8-5750c4eaec70",
+      "comment": "3. Alterar Relator para Diego",
+      "command": "click",
+      "target": "linkText=Alterar",
+      "targets": [
+        ["linkText=Alterar", "linkText"],
+        ["css=.click-url", "css:finder"],
+        ["xpath=//a[contains(text(),'Alterar')]", "xpath:link"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[5]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#reporter_edit')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Alterar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7af2214f-90f4-4d91-93dc-30a4501bfc53",
+      "comment": "3. Alterar visibilidade de publico para privado",
+      "command": "select",
+      "target": "id=view_state",
+      "targets": [
+        ["id=view_state", "id"],
+        ["name=view_state", "name"],
+        ["css=#view_state", "css:finder"],
+        ["xpath=//select[@id='view_state']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[2]/td[4]/select", "xpath:idRelative"],
+        ["xpath=//td[4]/select", "xpath:position"]
+      ],
+      "value": "index=1"
+    }, {
+      "id": "9fafe852-473d-4e36-8861-4ee017e45ef3",
+      "comment": "3. Preencher \"Atribuído a\" Com \"Diego\"",
+      "command": "select",
+      "target": "id=handler_id",
+      "targets": [
+        ["id=handler_id", "id"],
+        ["name=handler_id", "name"],
+        ["css=#handler_id", "css:finder"],
+        ["xpath=//select[@id='handler_id']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[5]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//td[2]/select", "xpath:position"]
+      ],
+      "value": "index=3"
+    }, {
+      "id": "1b63d5f1-d7d3-4fd6-8ee0-feaeab6173a3",
+      "comment": "3. Preencher \"Atribuído a\" Com \"Diego\"",
+      "command": "select",
+      "target": "id=handler_id",
+      "targets": [
+        ["id=handler_id", "id"],
+        ["name=handler_id", "name"],
+        ["css=#handler_id", "css:finder"],
+        ["xpath=//select[@id='handler_id']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[5]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//td[2]/select", "xpath:position"]
+      ],
+      "value": "index=3"
+    }, {
+      "id": "f98ce4a8-78be-465e-872d-d88a61300d02",
+      "comment": "3. Alterar \"Prioridade \" para \"Baixa\"",
+      "command": "select",
+      "target": "id=priority",
+      "targets": [
+        ["id=priority", "id"],
+        ["name=priority", "name"],
+        ["css=#priority", "css:finder"],
+        ["xpath=//select[@id='priority']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[6]/td/select", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/select", "xpath:position"]
+      ],
+      "value": "index=1"
+    }, {
+      "id": "46dbd553-a403-43fe-ac2f-a8c0810494ca",
+      "comment": "3. Alterar \"Gravidade \" para \"Mínimo\"",
+      "command": "select",
+      "target": "id=severity",
+      "targets": [
+        ["id=severity", "id"],
+        ["name=severity", "name"],
+        ["css=#severity", "css:finder"],
+        ["xpath=//select[@id='severity']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[6]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/select", "xpath:position"]
+      ],
+      "value": "index=3"
+    }, {
+      "id": "8c5293f0-0fca-4c55-b2ab-5fceb9b747ae",
+      "comment": "3. Alterar \"Frequência\" para \"as vezes\"",
+      "command": "select",
+      "target": "id=reproducibility",
+      "targets": [
+        ["id=reproducibility", "id"],
+        ["name=reproducibility", "name"],
+        ["css=#reproducibility", "css:finder"],
+        ["xpath=//select[@id='reproducibility']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[6]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[3]/select", "xpath:position"]
+      ],
+      "value": "index=1"
+    }, {
+      "id": "75327ae5-cf35-4b16-9038-2025200552d8",
+      "comment": "3. Alterar \"Estado\" para \"atribuído\"",
+      "command": "select",
+      "target": "id=status",
+      "targets": [
+        ["id=status", "id"],
+        ["name=status", "name"],
+        ["css=#status", "css:finder"],
+        ["xpath=//select[@id='status']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[7]/td/select", "xpath:idRelative"],
+        ["xpath=//tr[7]/td/select", "xpath:position"]
+      ],
+      "value": "index=0"
+    }, {
+      "id": "92444764-8a27-4bb4-ad83-aeb19f4b5323",
+      "comment": "3. Alterar \"Resolução\" para \"Duplicado\"",
+      "command": "select",
+      "target": "id=resolution",
+      "targets": [
+        ["id=resolution", "id"],
+        ["name=resolution", "name"],
+        ["css=#resolution", "css:finder"],
+        ["xpath=//select[@id='resolution']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[7]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//tr[7]/td[2]/select", "xpath:position"]
+      ],
+      "value": "index=0"
+    }, {
+      "id": "8a61fa65-1001-4ce7-9b30-4d8b81a272fd",
+      "comment": "3. Preencher o campo \"Plataforma\" para \"Teste\"",
+      "command": "type",
+      "target": "id=platform",
+      "targets": [
+        ["id=platform", "id"],
+        ["name=platform", "name"],
+        ["css=#platform", "css:finder"],
+        ["xpath=//input[@id='platform']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[8]/td/span/input[2]", "xpath:idRelative"],
+        ["xpath=//span/input[2]", "xpath:position"]
+      ],
+      "value": "Teste"
+    }, {
+      "id": "196f1bce-31ff-4ece-aad6-d2f46ea21b83",
+      "comment": "3. Preencher o campo \"SO\" para \"Windows\"",
+      "command": "type",
+      "target": "id=os",
+      "targets": [
+        ["id=os", "id"],
+        ["name=os", "name"],
+        ["css=#os", "css:finder"],
+        ["xpath=//input[@id='os']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[8]/td[2]/span/input[2]", "xpath:idRelative"],
+        ["xpath=//td[2]/span/input[2]", "xpath:position"]
+      ],
+      "value": "Windows"
+    }, {
+      "id": "85c29fac-ab69-4533-9389-8927bba995b2",
+      "comment": "3. Preencher o campo \"versão\" para \"10\"",
+      "command": "type",
+      "target": "id=os_build",
+      "targets": [
+        ["id=os_build", "id"],
+        ["name=os_build", "name"],
+        ["css=#os_build", "css:finder"],
+        ["xpath=//input[@id='os_build']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[8]/td[3]/span/input[2]", "xpath:idRelative"],
+        ["xpath=//td[3]/span/input[2]", "xpath:position"]
+      ],
+      "value": "10"
+    }, {
+      "id": "84958092-eb1d-4c57-b142-a24a902677b8",
+      "comment": "3. Preencher o campo \"Resumo\" para \"Resumo\"",
+      "command": "type",
+      "target": "id=summary",
+      "targets": [
+        ["id=summary", "id"],
+        ["name=summary", "name"],
+        ["css=#summary", "css:finder"],
+        ["xpath=//input[@id='summary']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[11]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Resumo"
+    }, {
+      "id": "fdc4b035-8ad0-47c6-b34c-c20956b1e8cb",
+      "comment": "3. Preencher o campo \"Descrição\" para \"Descrição\"",
+      "command": "type",
+      "target": "id=description",
+      "targets": [
+        ["id=description", "id"],
+        ["name=description", "name"],
+        ["css=#description", "css:finder"],
+        ["xpath=//textarea[@id='description']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[12]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Descrição"
+    }, {
+      "id": "12ab068f-e82c-4a1e-be06-daadeb4f3c00",
+      "comment": "3. Preencher o campo \"Passos para Reproduzir\" para \"Passos para Reproduzir\"",
+      "command": "type",
+      "target": "id=steps_to_reproduce",
+      "targets": [
+        ["id=steps_to_reproduce", "id"],
+        ["name=steps_to_reproduce", "name"],
+        ["css=#steps_to_reproduce", "css:finder"],
+        ["xpath=//textarea[@id='steps_to_reproduce']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[13]/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[13]/td/textarea", "xpath:position"]
+      ],
+      "value": "Passos para Reproduzir"
+    }, {
+      "id": "b100ceef-ac59-49fc-bd07-e0376d1e3cd5",
+      "comment": "3. Preencher o campo \"Informações Adicionais\" para \"Informações Adicionais\"",
+      "command": "type",
+      "target": "id=additional_information",
+      "targets": [
+        ["id=additional_information", "id"],
+        ["name=additional_information", "name"],
+        ["css=#additional_information", "css:finder"],
+        ["xpath=//textarea[@id='additional_information']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[14]/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[14]/td/textarea", "xpath:position"]
+      ],
+      "value": "Informações Adicionais"
+    }, {
+      "id": "3c6f3f67-181e-4889-87eb-9a62729ce705",
+      "comment": "3. Preencher o campo \"Adicionar Anotação\" para \"Adicionar Anotação\"",
+      "command": "type",
+      "target": "id=bugnote_text",
+      "targets": [
+        ["id=bugnote_text", "id"],
+        ["name=bugnote_text", "name"],
+        ["css=#bugnote_text", "css:finder"],
+        ["xpath=//textarea[@id='bugnote_text']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[17]/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[17]/td/textarea", "xpath:position"]
+      ],
+      "value": "Adicionar Anotação"
+    }, {
+      "id": "921e1554-6e3b-47f5-b6c8-c79c8e967889",
+      "comment": "Clicar em \"Privado\"",
+      "command": "//click",
+      "target": "css=.lbl",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5e787dc8-a5af-45c2-8bae-2e690e4aec7b",
+      "comment": "4. Clicar em \"atualizar informações\"",
+      "command": "click",
+      "target": "css=.widget-toolbox > .btn",
+      "targets": [
+        ["css=.widget-toolbox > .btn", "css:finder"],
+        ["xpath=//input[@value='Atualizar Informação']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7529ae0f-07dc-4abf-9c62-e4966b5d4905",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b430958-b15a-47b0-a6f4-c48d8bb4f359",
+      "comment": "Validação Resumo",
+      "command": "assertText",
+      "target": "css=tbody .column-summary",
+      "targets": [
+        ["css=tbody .column-summary", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[11]", "xpath:idRelative"],
+        ["xpath=//td[11]", "xpath:position"]
+      ],
+      "value": "Resumo"
+    }, {
+      "id": "d6521f0a-4d6b-4ed6-8737-3609ad1d3b2d",
+      "comment": "Abrir tarefa 1",
+      "command": "click",
+      "target": "css=tbody .column-id > a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d6125297-50bb-47ed-bb60-ba6c34adc55c",
+      "comment": "Validação categoria",
+      "command": "assertText",
+      "target": "css=.bug-header-data > .bug-category",
+      "targets": [
+        ["css=.bug-header-data > .bug-category", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[3]", "xpath:idRelative"],
+        ["xpath=//td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'[Todos os Projetos] General')]", "xpath:innerText"]
+      ],
+      "value": "[Todos os Projetos] General"
+    }, {
+      "id": "5570a3f2-93df-4485-905f-6f598f85607e",
+      "comment": "Validação relator",
+      "command": "assertText",
+      "target": "linkText=diego",
+      "targets": [
+        ["linkText=diego", "linkText"],
+        ["css=.bug-reporter > a", "css:finder"],
+        ["xpath=//a[contains(text(),'diego')]", "xpath:link"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[5]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://mantis.saojudas.base2.com.br/view_user_page.php?id=44')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'diego')]", "xpath:innerText"]
+      ],
+      "value": "diego"
+    }, {
+      "id": "91da6505-11c8-4850-8392-e013eba63229",
+      "comment": "Validação Atribuído a",
+      "command": "assertText",
+      "target": "css=.bug-assigned-to > a",
+      "targets": [
+        ["css=.bug-assigned-to > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'diego')])[2]", "xpath:link"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://mantis.saojudas.base2.com.br/view_user_page.php?id=44')])[2]", "xpath:href"],
+        ["xpath=//td[2]/a", "xpath:position"]
+      ],
+      "value": "diego"
+    }, {
+      "id": "238b219e-47d5-49ab-ab59-0cc2741bb705",
+      "comment": "Validação Prioridade",
+      "command": "assertText",
+      "target": "css=.bug-priority:nth-child(2)",
+      "targets": [
+        ["css=.bug-priority:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[6]/td", "xpath:idRelative"],
+        ["xpath=//tr[6]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'baixa')]", "xpath:innerText"]
+      ],
+      "value": "baixa"
+    }, {
+      "id": "d6d0256d-3c02-4bc0-8aea-968a93c73f0b",
+      "comment": "Validação \tGravidade",
+      "command": "assertText",
+      "target": "css=.bug-severity:nth-child(4)",
+      "targets": [
+        ["css=.bug-severity:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'mínimo')]", "xpath:innerText"]
+      ],
+      "value": "mínimo"
+    }, {
+      "id": "9b6c6d95-f82d-41ee-87f7-c60812f91e19",
+      "comment": "Validação Freqüência",
+      "command": "assertText",
+      "target": "css=.bug-reproducibility:nth-child(6)",
+      "targets": [
+        ["css=.bug-reproducibility:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[6]/td[3]", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'às vezes')]", "xpath:innerText"]
+      ],
+      "value": "às vezes"
+    }, {
+      "id": "7b64eb6f-e266-43a7-9599-6898286a0d8f",
+      "comment": "Validação Estado",
+      "command": "assertText",
+      "target": "css=.bug-status:nth-child(2)",
+      "targets": [
+        ["css=.bug-status:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[7]/td", "xpath:idRelative"],
+        ["xpath=//tr[7]/td", "xpath:position"],
+        ["xpath=//td[contains(.,' novo')]", "xpath:innerText"]
+      ],
+      "value": "novo"
+    }, {
+      "id": "818390a5-0d35-475e-b0f5-71f535d18438",
+      "comment": "Validação Resolução",
+      "command": "assertText",
+      "target": "css=.bug-resolution:nth-child(4)",
+      "targets": [
+        ["css=.bug-resolution:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[7]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'aberto')]", "xpath:innerText"]
+      ],
+      "value": "aberto"
+    }, {
+      "id": "3da8cf54-392d-4ffe-b2e6-f10e438e8883",
+      "comment": "Validação Plataforma",
+      "command": "assertText",
+      "target": "css=.bug-platform:nth-child(2)",
+      "targets": [
+        ["css=.bug-platform:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[8]/td", "xpath:idRelative"],
+        ["xpath=//tr[8]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Teste')]", "xpath:innerText"]
+      ],
+      "value": "Teste"
+    }, {
+      "id": "6a37668f-af83-4d4a-8c3a-90a65dba93bd",
+      "comment": "Validação SO",
+      "command": "assertText",
+      "target": "css=.bug-os:nth-child(4)",
+      "targets": [
+        ["css=.bug-os:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[8]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[8]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Windows')]", "xpath:innerText"]
+      ],
+      "value": "Windows"
+    }, {
+      "id": "6eebf942-56b2-4bec-85d6-f2e11144a615",
+      "comment": "Validação \tVersão SO",
+      "command": "assertText",
+      "target": "css=.bug-os-version:nth-child(6)",
+      "targets": [
+        ["css=.bug-os-version:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[8]/td[3]", "xpath:idRelative"],
+        ["xpath=//tr[8]/td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'10')]", "xpath:innerText"]
+      ],
+      "value": "10"
+    }, {
+      "id": "3ee4bcd4-0652-469b-9410-f03532a111f9",
+      "comment": "Validação Descrição",
+      "command": "assertText",
+      "target": "css=.bug-description:nth-child(2)",
+      "targets": [
+        ["css=.bug-description:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[12]/td", "xpath:idRelative"],
+        ["xpath=//tr[12]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Descrição')]", "xpath:innerText"]
+      ],
+      "value": "Descrição"
+    }, {
+      "id": "96632ec7-b6e7-4771-8df5-ed3dfdb05ff3",
+      "comment": "Validação Passos para Reproduzir",
+      "command": "assertText",
+      "target": "css=.bug-steps-to-reproduce:nth-child(2)",
+      "targets": [
+        ["css=.bug-steps-to-reproduce:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[13]/td", "xpath:idRelative"],
+        ["xpath=//tr[13]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Passos para Reproduzir')]", "xpath:innerText"]
+      ],
+      "value": "Passos para Reproduzir"
+    }, {
+      "id": "17ffbd2a-9be1-4c0b-b7b6-30b9f545c530",
+      "comment": "Validação Informações Adicionais",
+      "command": "assertText",
+      "target": "css=.bug-additional-information:nth-child(2)",
+      "targets": [
+        ["css=.bug-additional-information:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[14]/td", "xpath:idRelative"],
+        ["xpath=//tr[14]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Informações Adicionais')]", "xpath:innerText"]
+      ],
+      "value": "Informações Adicionais"
+    }, {
+      "id": "f0ee8d48-bbe4-46d9-bdd7-41f1de22dd25",
+      "comment": "Validação visibilidade",
+      "command": "assertText",
+      "target": "css=.bug-header-data > .bug-view-status",
+      "targets": [
+        ["css=.bug-header-data > .bug-view-status", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[4]", "xpath:idRelative"],
+        ["xpath=//td[4]", "xpath:position"],
+        ["xpath=//td[contains(.,'público')]", "xpath:innerText"]
+      ],
+      "value": "privado"
+    }, {
+      "id": "b96efc9f-cf63-4d8b-aa93-702c571cc65c",
+      "comment": "Validação Anotação",
+      "command": "assertText",
+      "target": "css=.bugnote-public",
+      "targets": [
+        ["css=.bugnote-public", "css:finder"],
+        ["xpath=//tr[@id='c27']/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Adicionar Anotação')]", "xpath:innerText"]
+      ],
+      "value": "Adicionar Anotação"
+    }]
+  }, {
+    "id": "0d42417c-d9ab-4e4a-a0a6-71ddd6f41677",
+    "name": "03 - Registro de bugs apenas com campos obrigatórios",
+    "commands": [{
+      "id": "7b404c87-7a44-48c6-8599-c9564813b79f",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8a81698b-e300-4d6f-bc77-5b07fc828068",
+      "comment": "1. Clique em \"Criar Tarefa\"",
+      "command": "click",
+      "target": "css=li:nth-child(3) .menu-text",
+      "targets": [
+        ["css=li:nth-child(3) .menu-text", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[3]/a/span", "xpath:idRelative"],
+        ["xpath=//li[3]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Criar Tarefa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "12cba26a-6579-42ea-a814-f7df605ba35b",
+      "comment": "2. Preencha campo \"Categoria\" com \"[Todos os Projetos] General\" ",
+      "command": "select",
+      "target": "id=category_id",
+      "targets": [
+        ["id=category_id", "id"],
+        ["name=category_id", "name"],
+        ["css=#category_id", "css:finder"],
+        ["xpath=//select[@id='category_id']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'[Todos os Projetos] General')]", "xpath:innerText"]
+      ],
+      "value": "index=0"
+    }, {
+      "id": "c6e43999-3470-42b0-84eb-fce57d879673",
+      "comment": "3. Preencha campo \"Resumo\" com \"Um breve resumo\" ",
+      "command": "type",
+      "target": "id=summary",
+      "targets": [
+        ["id=summary", "id"],
+        ["name=summary", "name"],
+        ["css=#summary", "css:finder"],
+        ["xpath=//input[@id='summary']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[7]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Um breve resumo"
+    }, {
+      "id": "5b49a9fc-ab3f-48ce-a434-7a04ddfb31d7",
+      "comment": "4. Preencha campo \"Descrição\" com \"Uma descrição completa do assunto\" ",
+      "command": "type",
+      "target": "id=description",
+      "targets": [
+        ["id=description", "id"],
+        ["name=description", "name"],
+        ["css=#description", "css:finder"],
+        ["xpath=//textarea[@id='description']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[8]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Uma descrição completa do assunto"
+    }, {
+      "id": "d883b7ad-813a-4af5-83eb-5452213b22ee",
+      "comment": "5. Clica em \"Criar Nova Tarefa\"",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Criar Nova Tarefa']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a6e43cd-bdb7-44bf-889f-7fd26e40a282",
+      "comment": "Validar descrição",
+      "command": "assertText",
+      "target": "css=.bug-description:nth-child(2)",
+      "targets": [
+        ["css=.bug-description:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[11]/td", "xpath:idRelative"],
+        ["xpath=//tr[11]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'desc')]", "xpath:innerText"]
+      ],
+      "value": "Uma descrição completa do assunto"
+    }, {
+      "id": "13139aa9-c0ed-4304-a83b-3e8ec347b22b",
+      "comment": "Validar Categoria",
+      "command": "assertText",
+      "target": "css=.bug-header-data > .bug-category",
+      "targets": [
+        ["css=.bug-header-data > .bug-category", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[3]", "xpath:idRelative"],
+        ["xpath=//td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'[Todos os Projetos] General')]", "xpath:innerText"]
+      ],
+      "value": "[Todos os Projetos] General"
+    }, {
+      "id": "22a17029-3213-4fd4-ab49-7ec37cc8b77e",
+      "comment": "Validar resumo [entrar em ver tarefas]",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3159f0b5-18d4-4075-bc8f-4a0c70f29f1f",
+      "comment": "Validar resumo ",
+      "command": "click",
+      "target": "css=tbody .column-summary",
+      "targets": [
+        ["css=tbody .column-summary", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[11]", "xpath:idRelative"],
+        ["xpath=//td[11]", "xpath:position"],
+        ["xpath=//td[contains(.,'Um breve resumo')]", "xpath:innerText"]
+      ],
+      "value": "Um breve resumo"
+    }]
+  }, {
+    "id": "802405ee-3d5b-403f-a58a-0fa1267eedcc",
+    "name": "04 - Registro de bugs com todos os campos preenchidos (Sem arquivo anexado)",
+    "commands": [{
+      "id": "3424b4c8-4070-486a-85c1-4d633a58df08",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "693889fa-75c5-4d3c-ac68-25ed36e2a1a9",
+      "comment": "1. Clica em \"Criar Nova Tarefa\"",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Criar Nova Tarefa']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3570b1e9-3aaf-43d0-9ed0-12a8accc5d94",
+      "comment": "2. Preencha campo \"Categoria\" com \"[Todos os Projetos] General\" ",
+      "command": "select",
+      "target": "id=category_id",
+      "targets": [
+        ["id=category_id", "id"],
+        ["name=category_id", "name"],
+        ["css=#category_id", "css:finder"],
+        ["xpath=//select[@id='category_id']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[2]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'[Todos os Projetos] General')]", "xpath:innerText"]
+      ],
+      "value": "index=0"
+    }, {
+      "id": "affc3845-13db-49e9-887c-eb39a5a6c240",
+      "comment": "3. Preencha campo \"Freqüência\" com \"as vezes\"",
+      "command": "select",
+      "target": "id=reproducibility",
+      "targets": [
+        ["id=reproducibility", "id"],
+        ["name=reproducibility", "name"],
+        ["css=#reproducibility", "css:finder"],
+        ["xpath=//select[@id='reproducibility']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[6]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[3]/select", "xpath:position"]
+      ],
+      "value": "index=1"
+    }, {
+      "id": "e0ab0bf0-499f-41db-b38f-61b5dea4e848",
+      "comment": "4. Preencha campo \"Gravidade\" com \"Mínimo\"",
+      "command": "select",
+      "target": "id=severity",
+      "targets": [
+        ["id=severity", "id"],
+        ["name=severity", "name"],
+        ["css=#severity", "css:finder"],
+        ["xpath=//select[@id='severity']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[6]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/select", "xpath:position"]
+      ],
+      "value": "index=3"
+    }, {
+      "id": "a1bf9dbf-0979-497b-88c5-9883f48e81fb",
+      "comment": "5. Preencha campo \"Prioridade\" com \"Baixa\"",
+      "command": "select",
+      "target": "id=priority",
+      "targets": [
+        ["id=priority", "id"],
+        ["name=priority", "name"],
+        ["css=#priority", "css:finder"],
+        ["xpath=//select[@id='priority']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[6]/td/select", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/select", "xpath:position"]
+      ],
+      "value": "index=1"
+    }, {
+      "id": "30b35e72-3764-426d-8cde-c2e4a0d62fcb",
+      "comment": "6. Selecionar Perfil",
+      "command": "click",
+      "target": "css=.fa-plus-square-o",
+      "targets": [
+        ["css=.fa-plus-square-o", "css:finder"],
+        ["xpath=//a[@id='profile_closed_link']/i", "xpath:idRelative"],
+        ["xpath=//div[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e68989b0-d15d-4da1-a655-a706f6438e77",
+      "comment": "6. Preencher o campo \"Plataforma\" para \"Teste\"",
+      "command": "type",
+      "target": "id=platform",
+      "targets": [
+        ["id=platform", "id"],
+        ["name=platform", "name"],
+        ["css=#platform", "css:finder"],
+        ["xpath=//input[@id='platform']", "xpath:attributes"],
+        ["xpath=//div[@id='profile_open']/table/tbody/tr/td/span/input[2]", "xpath:idRelative"],
+        ["xpath=//span/input[2]", "xpath:position"]
+      ],
+      "value": "Teste"
+    }, {
+      "id": "c2f5aa9b-cad9-43ee-bd41-963054300df2",
+      "comment": "6. Preencher o campo \"SO\" para \"Windows 10 Home Single Language\"",
+      "command": "type",
+      "target": "id=os",
+      "targets": [
+        ["id=os", "id"],
+        ["name=os", "name"],
+        ["css=#os", "css:finder"],
+        ["xpath=//input[@id='os']", "xpath:attributes"],
+        ["xpath=//div[@id='profile_open']/table/tbody/tr[2]/td/span/input[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/span/input[2]", "xpath:position"]
+      ],
+      "value": "Windows 10 Home Single Language"
+    }, {
+      "id": "a2097ff3-c49d-436e-801f-d4bcb7656bce",
+      "comment": "6. Preencher o campo \"versão\" para \"Versão 10.0.18363\"",
+      "command": "type",
+      "target": "id=os_build",
+      "targets": [
+        ["id=os_build", "id"],
+        ["name=os_build", "name"],
+        ["css=#os_build", "css:finder"],
+        ["xpath=//input[@id='os_build']", "xpath:attributes"],
+        ["xpath=//div[@id='profile_open']/table/tbody/tr[3]/td/span/input[2]", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/span/input[2]", "xpath:position"]
+      ],
+      "value": "Versão 10.0.18363"
+    }, {
+      "id": "148c4c52-81f9-4a4b-aa58-d226093e832c",
+      "comment": "7. Preencha campo \"Atribuir a\" com \"Murilo\"",
+      "command": "select",
+      "target": "id=handler_id",
+      "targets": [
+        ["id=handler_id", "id"],
+        ["name=handler_id", "name"],
+        ["css=#handler_id", "css:finder"],
+        ["xpath=//select[@id='handler_id']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[6]/td/select", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/select", "xpath:position"]
+      ],
+      "value": "index=7"
+    }, {
+      "id": "9a7c97a1-d16a-4516-954a-e1cce5e59602",
+      "comment": "8. Preencha campo \"Resumo\" com \"Um breve resumo\" ",
+      "command": "type",
+      "target": "id=summary",
+      "targets": [
+        ["id=summary", "id"],
+        ["name=summary", "name"],
+        ["css=#summary", "css:finder"],
+        ["xpath=//input[@id='summary']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[7]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Um breve resumo"
+    }, {
+      "id": "111bdfd6-c1af-4ab4-b7ee-91ef44f7eae2",
+      "comment": "9. Preencha campo \"Descrição\" com \"Uma descrição completa do assunto\" ",
+      "command": "type",
+      "target": "id=description",
+      "targets": [
+        ["id=description", "id"],
+        ["name=description", "name"],
+        ["css=#description", "css:finder"],
+        ["xpath=//textarea[@id='description']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[8]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Uma descrição completa do assunto"
+    }, {
+      "id": "170dc98c-9da5-424d-93df-8d14659bdfad",
+      "comment": "10. Preencha campo \"Passos para Reproduzir\" com \"Exemplificar com o passo a passo de como reproduzir o bug\"",
+      "command": "type",
+      "target": "id=steps_to_reproduce",
+      "targets": [
+        ["id=steps_to_reproduce", "id"],
+        ["name=steps_to_reproduce", "name"],
+        ["css=#steps_to_reproduce", "css:finder"],
+        ["xpath=//textarea[@id='steps_to_reproduce']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[9]/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[9]/td/textarea", "xpath:position"]
+      ],
+      "value": "Exemplificar com o passo a passo de como reproduzir o bug"
+    }, {
+      "id": "b09608c3-12fa-4c1d-84e8-32affdb6de39",
+      "comment": "11. Preencha campo \"Informações Adicionais\" com \"Descreva informações adicionais do bug\"",
+      "command": "type",
+      "target": "id=additional_info",
+      "targets": [
+        ["id=additional_info", "id"],
+        ["name=additional_info", "name"],
+        ["css=#additional_info", "css:finder"],
+        ["xpath=//textarea[@id='additional_info']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[10]/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[10]/td/textarea", "xpath:position"]
+      ],
+      "value": "Descreva informações adicionais do bug"
+    }, {
+      "id": "122410ea-a088-4027-af9a-73fdc3a2e8eb",
+      "comment": "12. Preencha campo \"Aplicar Marcadores\" com \"Bug MantisBT\"",
+      "command": "type",
+      "target": "id=tag_string",
+      "targets": [],
+      "value": "Bug MantisBT"
+    }, {
+      "id": "8258f814-e281-4e11-a66a-2efeec2f0ce4",
+      "comment": "13. Preencha campo \"Visibilidade\" com \"Publico\"",
+      "command": "click",
+      "target": "css=tr:nth-child(13) label:nth-child(1) > .lbl",
+      "targets": [
+        ["css=tr:nth-child(13) label:nth-child(1) > .lbl", "css:finder"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[13]/td/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"],
+        ["xpath=//span[contains(.,'público')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "71111784-b42c-49f8-83d7-39e9c7a9698b",
+      "comment": "14. Clica em \"Criar Nova Tarefa\"",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Criar Nova Tarefa']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c65dca4-74a8-4f3f-8d05-ee7ca09b20d3",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db29e18f-0b20-46c6-9c57-ae6b7ecf8875",
+      "comment": "Validação Resumo",
+      "command": "assertText",
+      "target": "css=tbody .column-summary",
+      "targets": [
+        ["css=tbody .column-summary", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[11]", "xpath:idRelative"],
+        ["xpath=//td[11]", "xpath:position"]
+      ],
+      "value": "Um breve resumo"
+    }, {
+      "id": "4eca5c82-c8ed-4877-b83b-ad6fe2918ad3",
+      "comment": "Abrir tarefa 1",
+      "command": "click",
+      "target": "css=tbody .column-id > a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "806ff702-d8fc-4ac0-b02d-15b09ed332da",
+      "comment": "Validação categoria",
+      "command": "assertText",
+      "target": "css=.bug-header-data > .bug-category",
+      "targets": [
+        ["css=.bug-header-data > .bug-category", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[3]", "xpath:idRelative"],
+        ["xpath=//td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'[Todos os Projetos] General')]", "xpath:innerText"]
+      ],
+      "value": "[Todos os Projetos] General"
+    }, {
+      "id": "4d836c63-2e80-4ac5-a60e-a1aa05ec4d95",
+      "comment": "Validação relator",
+      "command": "//assertText",
+      "target": "linkText=diego",
+      "targets": [],
+      "value": "diego"
+    }, {
+      "id": "bfb08d89-03af-49bf-ae8d-9347a593eb62",
+      "comment": "Validação Atribuído a",
+      "command": "assertText",
+      "target": "css=.bug-assigned-to > a",
+      "targets": [
+        ["css=.bug-assigned-to > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'diego')])[2]", "xpath:link"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://mantis.saojudas.base2.com.br/view_user_page.php?id=44')])[2]", "xpath:href"],
+        ["xpath=//td[2]/a", "xpath:position"]
+      ],
+      "value": "Murilo"
+    }, {
+      "id": "c4d8c976-0deb-4207-bb55-9af334ce8c8e",
+      "comment": "Validação Prioridade",
+      "command": "assertText",
+      "target": "css=.bug-priority:nth-child(2)",
+      "targets": [
+        ["css=.bug-priority:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[6]/td", "xpath:idRelative"],
+        ["xpath=//tr[6]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'baixa')]", "xpath:innerText"]
+      ],
+      "value": "baixa"
+    }, {
+      "id": "6a0cb99f-acfc-49d8-a0f0-7707053c3c3a",
+      "comment": "Validação \tGravidade",
+      "command": "assertText",
+      "target": "css=.bug-severity:nth-child(4)",
+      "targets": [
+        ["css=.bug-severity:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'mínimo')]", "xpath:innerText"]
+      ],
+      "value": "mínimo"
+    }, {
+      "id": "13db0ea5-74b2-4abf-b536-cbcc72488b02",
+      "comment": "Validação Freqüência",
+      "command": "assertText",
+      "target": "css=.bug-reproducibility:nth-child(6)",
+      "targets": [
+        ["css=.bug-reproducibility:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[6]/td[3]", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'às vezes')]", "xpath:innerText"]
+      ],
+      "value": "às vezes"
+    }, {
+      "id": "5e54b77a-f60b-4718-adf1-0aca8e5c2c94",
+      "comment": "Validação Plataforma",
+      "command": "assertText",
+      "target": "css=.bug-platform:nth-child(2)",
+      "targets": [
+        ["css=.bug-platform:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[8]/td", "xpath:idRelative"],
+        ["xpath=//tr[8]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Teste')]", "xpath:innerText"]
+      ],
+      "value": "Teste"
+    }, {
+      "id": "ed311594-b896-4fe0-9b82-2b0b24924934",
+      "comment": "Validação SO",
+      "command": "assertText",
+      "target": "css=.bug-os:nth-child(4)",
+      "targets": [
+        ["css=.bug-os:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[8]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[8]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Windows')]", "xpath:innerText"]
+      ],
+      "value": "Windows 10 Home Single Language"
+    }, {
+      "id": "07ce3e4f-3ee7-44fa-9435-b8261f4db127",
+      "comment": "Validação \tVersão SO",
+      "command": "assertText",
+      "target": "css=.bug-os-version:nth-child(6)",
+      "targets": [
+        ["css=.bug-os-version:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[8]/td[3]", "xpath:idRelative"],
+        ["xpath=//tr[8]/td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'10')]", "xpath:innerText"]
+      ],
+      "value": "Versão 10.0.18363"
+    }, {
+      "id": "9ed1657a-2a8a-40d0-991e-3df436a778eb",
+      "comment": "Validação Descrição",
+      "command": "assertText",
+      "target": "css=.bug-description:nth-child(2)",
+      "targets": [
+        ["css=.bug-description:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[12]/td", "xpath:idRelative"],
+        ["xpath=//tr[12]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Descrição')]", "xpath:innerText"]
+      ],
+      "value": "Uma descrição completa do assunto"
+    }, {
+      "id": "a7867b13-7c70-407d-96e9-94a78385de60",
+      "comment": "Validação Passos para Reproduzir",
+      "command": "assertText",
+      "target": "css=.bug-steps-to-reproduce:nth-child(2)",
+      "targets": [
+        ["css=.bug-steps-to-reproduce:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[13]/td", "xpath:idRelative"],
+        ["xpath=//tr[13]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Passos para Reproduzir')]", "xpath:innerText"]
+      ],
+      "value": "Exemplificar com o passo a passo de como reproduzir o bug"
+    }, {
+      "id": "b2b33755-8397-477a-9dfc-1f9f6d35a782",
+      "comment": "Validação Informações Adicionais",
+      "command": "assertText",
+      "target": "css=.bug-additional-information:nth-child(2)",
+      "targets": [
+        ["css=.bug-additional-information:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[14]/td", "xpath:idRelative"],
+        ["xpath=//tr[14]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Informações Adicionais')]", "xpath:innerText"]
+      ],
+      "value": "Descreva informações adicionais do bug"
+    }, {
+      "id": "ceceb2c1-98d2-4ad5-a724-2a40ebf5f8c9",
+      "comment": "Validação visibilidade",
+      "command": "assertText",
+      "target": "css=.bug-header-data > .bug-view-status",
+      "targets": [
+        ["css=.bug-header-data > .bug-view-status", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[4]", "xpath:idRelative"],
+        ["xpath=//td[4]", "xpath:position"],
+        ["xpath=//td[contains(.,'privado')]", "xpath:innerText"]
+      ],
+      "value": "público"
+    }, {
+      "id": "f28c662c-972b-4e74-b7fa-6b1e3996e865",
+      "comment": "Validação marcadores",
+      "command": "assertText",
+      "target": "linkText=Bug MantisBT",
+      "targets": [
+        ["linkText=Bug MantisBT", "linkText"],
+        ["css=.btn-xs:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Bug MantisBT')]", "xpath:link"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[15]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'tag_view_page.php?tag_id=3')]", "xpath:href"],
+        ["xpath=//tr[15]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bug MantisBT')]", "xpath:innerText"]
+      ],
+      "value": "Bug MantisBT"
+    }]
+  }, {
+    "id": "9f1c658f-8591-4407-85b6-2dede706eb70",
+    "name": "05 - Registro de bugs com todos os campos preenchidos (Com arquivo anexado) (1)",
+    "commands": [{
+      "id": "a8d2de3d-0d18-46cd-8f6d-0af45cc29d54",
+      "comment": "REQUERIMENTOS: O ARQUIVO DE ENVIO DEVE TER O NOME TESTE.JPG",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8a0b3b5f-3072-4439-9ab7-963a0fb536cb",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "10bb0367-48bc-4bd8-a9cb-2166cba6f6d1",
+      "comment": "1. Clica em \"Criar Nova Tarefa\"",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Criar Nova Tarefa']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8da97dd4-9451-4c82-a8c5-da55a32f96f5",
+      "comment": "2. Preencha campo \"Categoria\" com \"[Todos os Projetos] General\" ",
+      "command": "select",
+      "target": "id=category_id",
+      "targets": [
+        ["id=category_id", "id"],
+        ["name=category_id", "name"],
+        ["css=#category_id", "css:finder"],
+        ["xpath=//select[@id='category_id']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[2]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'[Todos os Projetos] General')]", "xpath:innerText"]
+      ],
+      "value": "index=0"
+    }, {
+      "id": "d757df0f-adb2-4165-9616-88735321c17c",
+      "comment": "3. Preencha campo \"Freqüência\" com \"as vezes\"",
+      "command": "select",
+      "target": "id=reproducibility",
+      "targets": [
+        ["id=reproducibility", "id"],
+        ["name=reproducibility", "name"],
+        ["css=#reproducibility", "css:finder"],
+        ["xpath=//select[@id='reproducibility']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[6]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[3]/select", "xpath:position"]
+      ],
+      "value": "index=1"
+    }, {
+      "id": "61d4ccb6-499d-40d0-8717-d713014b1ec6",
+      "comment": "4. Preencha campo \"Gravidade\" com \"Mínimo\"",
+      "command": "select",
+      "target": "id=severity",
+      "targets": [
+        ["id=severity", "id"],
+        ["name=severity", "name"],
+        ["css=#severity", "css:finder"],
+        ["xpath=//select[@id='severity']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[6]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/select", "xpath:position"]
+      ],
+      "value": "index=3"
+    }, {
+      "id": "65e48232-729a-49ba-8288-e1459e259cea",
+      "comment": "5. Preencha campo \"Prioridade\" com \"Baixa\"",
+      "command": "select",
+      "target": "id=priority",
+      "targets": [
+        ["id=priority", "id"],
+        ["name=priority", "name"],
+        ["css=#priority", "css:finder"],
+        ["xpath=//select[@id='priority']", "xpath:attributes"],
+        ["xpath=//form[@id='update_bug_form']/div/div[2]/div/div/table/tbody/tr[6]/td/select", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/select", "xpath:position"]
+      ],
+      "value": "index=1"
+    }, {
+      "id": "fe53b6ec-65c5-41c8-909a-f55eae05eec4",
+      "comment": "6. Selecionar Perfil",
+      "command": "//click",
+      "target": "css=.fa-plus-square-o",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "726817e3-63ab-4f4d-b540-fae4c02c9628",
+      "comment": "6. Preencher o campo \"Plataforma\" para \"Teste\"",
+      "command": "type",
+      "target": "id=platform",
+      "targets": [
+        ["id=platform", "id"],
+        ["name=platform", "name"],
+        ["css=#platform", "css:finder"],
+        ["xpath=//input[@id='platform']", "xpath:attributes"],
+        ["xpath=//div[@id='profile_open']/table/tbody/tr/td/span/input[2]", "xpath:idRelative"],
+        ["xpath=//span/input[2]", "xpath:position"]
+      ],
+      "value": "Teste"
+    }, {
+      "id": "74acd63a-efe6-4514-9692-4dc8409fbc61",
+      "comment": "6. Preencher o campo \"SO\" para \"Windows 10 Home Single Language\"",
+      "command": "type",
+      "target": "id=os",
+      "targets": [
+        ["id=os", "id"],
+        ["name=os", "name"],
+        ["css=#os", "css:finder"],
+        ["xpath=//input[@id='os']", "xpath:attributes"],
+        ["xpath=//div[@id='profile_open']/table/tbody/tr[2]/td/span/input[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/span/input[2]", "xpath:position"]
+      ],
+      "value": "Windows 10 Home Single Language"
+    }, {
+      "id": "0dcdf01d-635a-4d6f-a92d-7f522b1a29c1",
+      "comment": "6. Preencher o campo \"versão\" para \"Versão 10.0.18363\"",
+      "command": "type",
+      "target": "id=os_build",
+      "targets": [
+        ["id=os_build", "id"],
+        ["name=os_build", "name"],
+        ["css=#os_build", "css:finder"],
+        ["xpath=//input[@id='os_build']", "xpath:attributes"],
+        ["xpath=//div[@id='profile_open']/table/tbody/tr[3]/td/span/input[2]", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/span/input[2]", "xpath:position"]
+      ],
+      "value": "Versão 10.0.18363"
+    }, {
+      "id": "2de1c1e5-4967-4749-878c-fad42f9856ac",
+      "comment": "7. Preencha campo \"Atribuir a\" com \"Murilo\"",
+      "command": "select",
+      "target": "id=handler_id",
+      "targets": [
+        ["id=handler_id", "id"],
+        ["name=handler_id", "name"],
+        ["css=#handler_id", "css:finder"],
+        ["xpath=//select[@id='handler_id']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[6]/td/select", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/select", "xpath:position"]
+      ],
+      "value": "index=7"
+    }, {
+      "id": "1edff9f7-522d-4323-be54-d96163841407",
+      "comment": "8. Preencha campo \"Resumo\" com \"Um breve resumo\" ",
+      "command": "type",
+      "target": "id=summary",
+      "targets": [
+        ["id=summary", "id"],
+        ["name=summary", "name"],
+        ["css=#summary", "css:finder"],
+        ["xpath=//input[@id='summary']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[7]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Um breve resumo"
+    }, {
+      "id": "0bf9acd4-3445-40b7-b268-f3d7fdf757b7",
+      "comment": "9. Preencha campo \"Descrição\" com \"Uma descrição completa do assunto\" ",
+      "command": "type",
+      "target": "id=description",
+      "targets": [
+        ["id=description", "id"],
+        ["name=description", "name"],
+        ["css=#description", "css:finder"],
+        ["xpath=//textarea[@id='description']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[8]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Uma descrição completa do assunto"
+    }, {
+      "id": "d1b59d8d-7906-4b06-8792-2de691d5258d",
+      "comment": "10. Preencha campo \"Passos para Reproduzir\" com \"Exemplificar com o passo a passo de como reproduzir o bug\"",
+      "command": "type",
+      "target": "id=steps_to_reproduce",
+      "targets": [
+        ["id=steps_to_reproduce", "id"],
+        ["name=steps_to_reproduce", "name"],
+        ["css=#steps_to_reproduce", "css:finder"],
+        ["xpath=//textarea[@id='steps_to_reproduce']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[9]/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[9]/td/textarea", "xpath:position"]
+      ],
+      "value": "Exemplificar com o passo a passo de como reproduzir o bug"
+    }, {
+      "id": "b659f2c4-7195-4de9-857e-fb0dd1e8e1e1",
+      "comment": "11. Preencha campo \"Informações Adicionais\" com \"Descreva informações adicionais do bug\"",
+      "command": "type",
+      "target": "id=additional_info",
+      "targets": [
+        ["id=additional_info", "id"],
+        ["name=additional_info", "name"],
+        ["css=#additional_info", "css:finder"],
+        ["xpath=//textarea[@id='additional_info']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[10]/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[10]/td/textarea", "xpath:position"]
+      ],
+      "value": "Descreva informações adicionais do bug"
+    }, {
+      "id": "2740eaf7-dea6-4af0-a664-ed6baf7babce",
+      "comment": "12. Preencha campo \"Aplicar Marcadores\" com \"Bug MantisBT\"",
+      "command": "type",
+      "target": "id=tag_string",
+      "targets": [],
+      "value": "Bug MantisBT"
+    }, {
+      "id": "cf64004f-b9c0-46e1-bf3a-b13660141742",
+      "comment": "13. Clique no campo \"Enviar arquivos\" com \"uma Imagem com Tamanho máximo: 2,097 kB\"",
+      "command": "click",
+      "target": "css=.dropzone",
+      "targets": [
+        ["css=.dropzone", "css:finder"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[12]/td/div[2]", "xpath:idRelative"],
+        ["xpath=//tr[12]/td/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3569aad0-4b3b-4893-a83d-7e945ef4b994",
+      "comment": "Aguarda 10 segundos para selecionar arquivo manualmente",
+      "command": "pause",
+      "target": "10000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "26a2b9e2-2db0-4f7c-8904-70a931b748bb",
+      "comment": "14. Preencha campo \"Visibilidade\" com \"Privado\"",
+      "command": "click",
+      "target": "css=label:nth-child(2) > .lbl",
+      "targets": [
+        ["css=label:nth-child(2) > .lbl", "css:finder"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[13]/td/label[2]/span", "xpath:idRelative"],
+        ["xpath=//label[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'privado')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1db744b5-a63a-470a-90f9-51a648214d40",
+      "comment": "15. Clica em \"Criar Nova Tarefa\"",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Criar Nova Tarefa']", "xpath:attributes"],
+        ["xpath=//form[@id='report_bug_form']/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9e17812-bf20-4dc1-9e26-00b3c15c7100",
+      "comment": "Abrir tarefa 1",
+      "command": "//click",
+      "target": "css=tbody .column-id > a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f9df063c-838c-4db5-a6f4-2bb836eff705",
+      "comment": "Validação categoria",
+      "command": "assertText",
+      "target": "css=.bug-header-data > .bug-category",
+      "targets": [
+        ["css=.bug-header-data > .bug-category", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[3]", "xpath:idRelative"],
+        ["xpath=//td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'[Todos os Projetos] General')]", "xpath:innerText"]
+      ],
+      "value": "[Todos os Projetos] General"
+    }, {
+      "id": "48c93cc1-e0e9-471a-9d89-bae89511d4e8",
+      "comment": "Validação relator",
+      "command": "//assertText",
+      "target": "linkText=diego",
+      "targets": [],
+      "value": "diego"
+    }, {
+      "id": "cad4d224-db01-4a2b-a8dd-0e38d6b79eb3",
+      "comment": "Validação Atribuído a",
+      "command": "assertText",
+      "target": "css=.bug-assigned-to > a",
+      "targets": [
+        ["css=.bug-assigned-to > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'diego')])[2]", "xpath:link"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://mantis.saojudas.base2.com.br/view_user_page.php?id=44')])[2]", "xpath:href"],
+        ["xpath=//td[2]/a", "xpath:position"]
+      ],
+      "value": "Murilo"
+    }, {
+      "id": "d4a15456-b983-439b-9eef-fe81c39b53c4",
+      "comment": "Validação Prioridade",
+      "command": "assertText",
+      "target": "css=.bug-priority:nth-child(2)",
+      "targets": [
+        ["css=.bug-priority:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[6]/td", "xpath:idRelative"],
+        ["xpath=//tr[6]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'baixa')]", "xpath:innerText"]
+      ],
+      "value": "baixa"
+    }, {
+      "id": "36d43bbf-42be-4086-89f2-186e3b5b3597",
+      "comment": "Validação \tGravidade",
+      "command": "assertText",
+      "target": "css=.bug-severity:nth-child(4)",
+      "targets": [
+        ["css=.bug-severity:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'mínimo')]", "xpath:innerText"]
+      ],
+      "value": "mínimo"
+    }, {
+      "id": "36624661-9eff-4e51-b6f3-33242579209c",
+      "comment": "Validação Freqüência",
+      "command": "assertText",
+      "target": "css=.bug-reproducibility:nth-child(6)",
+      "targets": [
+        ["css=.bug-reproducibility:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[6]/td[3]", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'às vezes')]", "xpath:innerText"]
+      ],
+      "value": "às vezes"
+    }, {
+      "id": "93f16bc6-cacb-4c7d-9650-5547b6430e70",
+      "comment": "Validação Plataforma",
+      "command": "assertText",
+      "target": "css=.bug-platform:nth-child(2)",
+      "targets": [
+        ["css=.bug-platform:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[8]/td", "xpath:idRelative"],
+        ["xpath=//tr[8]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Teste')]", "xpath:innerText"]
+      ],
+      "value": "Teste"
+    }, {
+      "id": "0ae76784-8636-4b62-93cc-a8552a0f1fbb",
+      "comment": "Validação SO",
+      "command": "assertText",
+      "target": "css=.bug-os:nth-child(4)",
+      "targets": [
+        ["css=.bug-os:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[8]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[8]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Windows')]", "xpath:innerText"]
+      ],
+      "value": "Windows 10 Home Single Language"
+    }, {
+      "id": "634f0758-b559-467d-a7c9-f21a60152cc9",
+      "comment": "Validação \tVersão SO",
+      "command": "assertText",
+      "target": "css=.bug-os-version:nth-child(6)",
+      "targets": [
+        ["css=.bug-os-version:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[8]/td[3]", "xpath:idRelative"],
+        ["xpath=//tr[8]/td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'10')]", "xpath:innerText"]
+      ],
+      "value": "Versão 10.0.18363"
+    }, {
+      "id": "5e9a8593-3adf-4a01-a295-a8cce1e1482b",
+      "comment": "Validação Descrição",
+      "command": "assertText",
+      "target": "css=.bug-description:nth-child(2)",
+      "targets": [
+        ["css=.bug-description:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[12]/td", "xpath:idRelative"],
+        ["xpath=//tr[12]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Descrição')]", "xpath:innerText"]
+      ],
+      "value": "Uma descrição completa do assunto"
+    }, {
+      "id": "8a3f31fd-5044-4817-8105-a236b6d9cf69",
+      "comment": "Validação Passos para Reproduzir",
+      "command": "assertText",
+      "target": "css=.bug-steps-to-reproduce:nth-child(2)",
+      "targets": [
+        ["css=.bug-steps-to-reproduce:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[13]/td", "xpath:idRelative"],
+        ["xpath=//tr[13]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Passos para Reproduzir')]", "xpath:innerText"]
+      ],
+      "value": "Exemplificar com o passo a passo de como reproduzir o bug"
+    }, {
+      "id": "64955131-12b8-4b11-8d1e-ad68d992386c",
+      "comment": "Validação Informações Adicionais",
+      "command": "assertText",
+      "target": "css=.bug-additional-information:nth-child(2)",
+      "targets": [
+        ["css=.bug-additional-information:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[14]/td", "xpath:idRelative"],
+        ["xpath=//tr[14]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Informações Adicionais')]", "xpath:innerText"]
+      ],
+      "value": "Descreva informações adicionais do bug"
+    }, {
+      "id": "c86826f6-fe1c-4639-a7be-6b2916039ed8",
+      "comment": "Validação visibilidade",
+      "command": "assertText",
+      "target": "css=.bug-header-data > .bug-view-status",
+      "targets": [
+        ["css=.bug-header-data > .bug-view-status", "css:finder"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[4]", "xpath:idRelative"],
+        ["xpath=//td[4]", "xpath:position"],
+        ["xpath=//td[contains(.,'privado')]", "xpath:innerText"]
+      ],
+      "value": "privado"
+    }, {
+      "id": "0fe7940b-c976-4695-a1a3-8ef5e3aa5194",
+      "comment": "Validação marcadores",
+      "command": "assertText",
+      "target": "linkText=Bug MantisBT",
+      "targets": [
+        ["linkText=Bug MantisBT", "linkText"],
+        ["css=.btn-xs:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Bug MantisBT')]", "xpath:link"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[15]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'tag_view_page.php?tag_id=3')]", "xpath:href"],
+        ["xpath=//tr[15]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bug MantisBT')]", "xpath:innerText"]
+      ],
+      "value": "Bug MantisBT"
+    }, {
+      "id": "b55674de-069f-40d1-b19a-e1ea67b66efd",
+      "comment": "Validação Download",
+      "command": "assertText",
+      "target": "linkText=teste.jpg",
+      "targets": [
+        ["linkText=3.jpg", "linkText"],
+        ["css=#attachment_preview_19_open > a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'3.jpg')]", "xpath:link"],
+        ["xpath=//div[@id='attachment_preview_19_open']/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'file_download.php?file_id=19&type=bug')])[2]", "xpath:href"],
+        ["xpath=//td[2]/div/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'3.jpg')]", "xpath:innerText"]
+      ],
+      "value": "teste.jpg"
+    }, {
+      "id": "4dd67d7b-efdb-4fba-9bbb-739f65879e1b",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d48fb21-af98-4faf-9653-070a30c9ad1c",
+      "comment": "Validação Resumo",
+      "command": "assertText",
+      "target": "css=tbody .column-summary",
+      "targets": [
+        ["css=tbody .column-summary", "css:finder"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[11]", "xpath:idRelative"],
+        ["xpath=//td[11]", "xpath:position"],
+        ["xpath=//td[contains(.,'Um breve resumo')]", "xpath:innerText"]
+      ],
+      "value": "Um breve resumo"
+    }]
+  }, {
+    "id": "e09a35a1-29ac-4c7d-816d-de1e443e8062",
+    "name": "21 - Salvar filtro de tarefa por resumo",
+    "commands": [{
+      "id": "0e72f926-e462-4b9e-9f4c-e22b3239c6b0",
+      "comment": "ABA FILTROS DEVE ESTAR FECHADA",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0f5feacc-c15f-4a29-a505-d9491144f864",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "437c5f9e-0634-44d1-8747-8dfa28d53021",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2c775d1-1b27-4057-858a-5bf23fa0dd02",
+      "comment": "2. Abrir a sessão \"filtros\"",
+      "command": "click",
+      "target": "css=.\\31",
+      "targets": [
+        ["css=.\\31", "css:finder"],
+        ["xpath=//a[@id='filter-toggle']/i", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/div/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4508c05-a84f-406c-9983-ff1dc619f186",
+      "comment": "3. Clicar em \"Gravidade\" ",
+      "command": "click",
+      "target": "id=show_severity_filter",
+      "targets": [
+        ["id=show_severity_filter", "id"],
+        ["linkText=Gravidade", "linkText"],
+        ["css=#show_severity_filter", "css:finder"],
+        ["xpath=//a[contains(text(),'Gravidade')]", "xpath:link"],
+        ["xpath=//a[@id='show_severity_filter']", "xpath:attributes"],
+        ["xpath=//form[@id='filters_form_open']/div/div/table/tbody/tr/td[6]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/view_filters_page.php?for_screen=1&static=1&view_type=simple')])[6]", "xpath:href"],
+        ["xpath=//td[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gravidade')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "348a166e-560c-4d80-aee5-7ddc78f36ae5",
+      "comment": "4. Marcar com \"Grande\"",
+      "command": "select",
+      "target": "name=severity[]",
+      "targets": [
+        ["name=severity[]", "name"],
+        ["css=.input-xs:nth-child(1)", "css:finder"],
+        ["xpath=//select[@name='severity[]']", "xpath:attributes"],
+        ["xpath=//td[@id='show_severity_filter_target']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "index=6"
+    }, {
+      "id": "3b94104f-3094-4393-bcef-40318297d297",
+      "comment": "5. Aplicar Filtro",
+      "command": "click",
+      "target": "css=.no-float",
+      "targets": [
+        ["css=.no-float", "css:finder"],
+        ["xpath=//input[@name='filter_submit']", "xpath:attributes"],
+        ["xpath=//form[@id='filters_form_open']/div[2]/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6854616b-0fed-492e-ab0d-63f3426faa60",
+      "comment": "6. Clicar em \"Salvar\"",
+      "command": "click",
+      "target": "linkText=Salvar",
+      "targets": [
+        ["linkText=Salvar", "linkText"],
+        ["css=.form-inline > .btn-group > .btn:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='filter']/div[2]/div/div/div/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'query_store_page.php')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/div/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3aee436b-4283-4c51-ad42-e4160cca879b",
+      "comment": "7. Preencher o campo \"Nome do filtro\" com \"Teste\"",
+      "command": "type",
+      "target": "name=query_name",
+      "targets": [
+        ["name=query_name", "name"],
+        ["css=.input-sm", "css:finder"],
+        ["xpath=//input[@name='query_name']", "xpath:attributes"],
+        ["xpath=//div[@id='save-filter']/div[2]/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Teste"
+    }, {
+      "id": "25252bd4-716a-4c46-9da5-5f9a6b1dbf3c",
+      "comment": "8. Clicar em \"Salvar Filtro Atual\"",
+      "command": "click",
+      "target": "css=.btn:nth-child(8)",
+      "targets": [
+        ["css=.btn:nth-child(8)", "css:finder"],
+        ["xpath=//input[@value='Salvar Filtro Atual']", "xpath:attributes"],
+        ["xpath=//div[@id='save-filter']/div[2]/div/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e4d38c0-ade3-4f4e-a79b-73a84f01069a",
+      "comment": "Validar",
+      "command": "select",
+      "target": "name=source_query_id",
+      "targets": [
+        ["name=source_query_id", "name"],
+        ["css=.input-s", "css:finder"],
+        ["xpath=//select[@name='source_query_id']", "xpath:attributes"],
+        ["xpath=//form[@id='filter-queries-form']/label/select", "xpath:idRelative"],
+        ["xpath=//label/select", "xpath:position"]
+      ],
+      "value": "index=1"
+    }, {
+      "id": "c22a6f67-67ee-4214-8292-8590ba32270d",
+      "comment": "Validar ",
+      "command": "assertText",
+      "target": "name=source_query_id",
+      "targets": [
+        ["name=source_query_id", "name"],
+        ["css=.input-s", "css:finder"],
+        ["xpath=//select[@name='source_query_id']", "xpath:attributes"],
+        ["xpath=//form[@id='filter-queries-form']/label/select", "xpath:idRelative"],
+        ["xpath=//label/select", "xpath:position"]
+      ],
+      "value": "Teste"
+    }, {
+      "id": "c70545b7-87f9-45b1-a596-fd4da589cf1b",
+      "comment": "Validar ",
+      "command": "assertText",
+      "target": "id=show_severity_filter_target",
+      "targets": [
+        ["id=show_severity_filter_target", "id"],
+        ["css=#show_severity_filter_target", "css:finder"],
+        ["xpath=//td[@id='show_severity_filter_target']", "xpath:attributes"],
+        ["xpath=//form[@id='filters_form_open']/div/div/table/tbody/tr[2]/td[6]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[6]", "xpath:position"],
+        ["xpath=//td[contains(.,'grande')]", "xpath:innerText"]
+      ],
+      "value": "grande"
+    }]
+  }, {
+    "id": "7a8d9929-13e4-41b2-b7b0-51b909100810",
+    "name": "20 - Carregar Filtro por gravidade",
+    "commands": [{
+      "id": "5b9ae97d-1c7c-4c67-a208-1cb4d8f1e4b6",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9b125ef5-26cc-43df-b26d-96ca30dce337",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "05f11cea-1d69-48d7-8cae-2a8f1b5c79dc",
+      "comment": "2. Abrir a sessão \"filtros\"",
+      "command": "//click",
+      "target": "css=.\\31",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f3f39729-f1df-4877-9e25-177c1430eeed",
+      "comment": "2. Selecionar \"Teste\" em \"Carregar\"",
+      "command": "select",
+      "target": "name=source_query_id",
+      "targets": [
+        ["name=source_query_id", "name"],
+        ["css=.input-s", "css:finder"],
+        ["xpath=//select[@name='source_query_id']", "xpath:attributes"],
+        ["xpath=//form[@id='filter-queries-form']/label/select", "xpath:idRelative"],
+        ["xpath=//label/select", "xpath:position"]
+      ],
+      "value": "index=1"
+    }, {
+      "id": "406ec266-19ae-4dd5-a41a-5a2b6e24e0bc",
+      "comment": "Validar ",
+      "command": "assertText",
+      "target": "id=show_severity_filter_target",
+      "targets": [
+        ["id=show_severity_filter_target", "id"],
+        ["css=#show_severity_filter_target", "css:finder"],
+        ["xpath=//td[@id='show_severity_filter_target']", "xpath:attributes"],
+        ["xpath=//form[@id='filters_form_open']/div/div/table/tbody/tr[2]/td[6]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[6]", "xpath:position"]
+      ],
+      "value": "grande"
+    }]
+  }, {
+    "id": "ebfd31f8-5f90-4cda-bbb4-06fc8f0f0c91",
+    "name": "12 - Redefinir filtro",
+    "commands": [{
+      "id": "f3636a1c-4bb3-4e82-a13d-8113ec75be14",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7316389b-1e6c-4543-aa26-182e7dfdfca5",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c85fa12f-91ef-4548-a8bd-ce8efe941c94",
+      "comment": "2. Clique em \"redefinir\" na sessão \"filtros\"",
+      "command": "click",
+      "target": "linkText=Redefinir",
+      "targets": [
+        ["linkText=Redefinir", "linkText"],
+        ["css=.form-inline .btn:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='filter']/div[2]/div/div/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'view_all_set.php?type=0')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d8ffd01e-9706-46f9-863b-ea7f986739b9",
+      "comment": "Validar ",
+      "command": "assertText",
+      "target": "id=show_severity_filter_target",
+      "targets": [
+        ["id=show_severity_filter_target", "id"],
+        ["css=#show_severity_filter_target", "css:finder"],
+        ["xpath=//td[@id='show_severity_filter_target']", "xpath:attributes"],
+        ["xpath=//form[@id='filters_form_open']/div/div/table/tbody/tr[2]/td[6]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[6]", "xpath:position"]
+      ],
+      "value": "qualquer"
+    }]
+  }, {
+    "id": "d0a3fe15-eee2-430c-9785-4413a2516ce0",
+    "name": "22 - Adicionar Anotação (com anexo)",
+    "commands": [{
+      "id": "f4af13c8-10eb-4da7-b70a-dbf5ba0e3c35",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6bdc1892-fd15-4b45-a251-40280f608431",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4aa3460-ecae-44e2-9719-fe8727f67bff",
+      "comment": "2. Clicar na tarefa desejada",
+      "command": "click",
+      "target": "css=tbody .column-id > a",
+      "targets": [
+        ["css=tbody .column-id > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'0000108')])[2]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/view.php?id=108')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/table/tbody/tr/td[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c370173e-c757-4cca-9f39-ceda219c92cc",
+      "comment": "3. Preencher o campo \"Anotações\" com a \"anotação desejada\"",
+      "command": "type",
+      "target": "id=bugnote_text",
+      "targets": [],
+      "value": "anotação desejada"
+    }, {
+      "id": "3740bd6e-204b-4ea8-9ee4-867e3e428cd5",
+      "comment": "4. Clicar em \"Anexe arquivos arrastando e soltando, selecionando e colando-os.\" escolhendo \"teste.jpg\"",
+      "command": "click",
+      "target": "css=.upload-icon",
+      "targets": [
+        ["css=.upload-icon", "css:finder"],
+        ["xpath=//tr[@id='bugnote-attach-files']/td/div[2]/i", "xpath:idRelative"],
+        ["xpath=//div[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc83fa9d-3d44-4f69-9bef-f2e8aea63e2e",
+      "comment": "",
+      "command": "pause",
+      "target": "10000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fd2216c5-cb63-47f8-b7de-5e85d735627d",
+      "comment": "5. Clicar em \"Adicionar anotação\"",
+      "command": "click",
+      "target": "css=.widget-toolbox > .btn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b309629-7668-400d-b77d-6e2dce8881ce",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "linkText=teste.jpg",
+      "targets": [
+        ["linkText=3.jpg", "linkText"],
+        ["css=#attachment_preview_19_open > a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'3.jpg')]", "xpath:link"],
+        ["xpath=//div[@id='attachment_preview_19_open']/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'file_download.php?file_id=19&type=bug')])[2]", "xpath:href"],
+        ["xpath=//td[2]/div/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'3.jpg')]", "xpath:innerText"]
+      ],
+      "value": "teste.jpg"
+    }]
+  }, {
+    "id": "37ad1e9b-70df-4fc7-aacc-04b5bb22de7b",
+    "name": "18 - Adicionar Anotações (sem anexo )",
+    "commands": [{
+      "id": "8ff117b8-eeac-4073-b6a5-95e27d7d5573",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6d59b752-ff16-440e-9ecd-0b4c1bae4deb",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8f66431-eca9-4af8-a9b5-aa85d508d290",
+      "comment": "2. Clicar na tarefa desejada",
+      "command": "click",
+      "target": "css=tbody .column-id > a",
+      "targets": [
+        ["css=tbody .column-id > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'0000108')])[2]", "xpath:link"],
+        ["xpath=//table[@id='buglist']/tbody/tr/td[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/view.php?id=108')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/table/tbody/tr/td[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a4552c2-e066-4e3e-b5a6-8dfbf075ae14",
+      "comment": "3. Preencha campo \"anotação\" com \"Isso é um teste de anotação\" ",
+      "command": "type",
+      "target": "id=bugnote_text",
+      "targets": [],
+      "value": "Isso é um teste de anotação"
+    }, {
+      "id": "111b6e17-2c69-45ac-9317-1eceee67b4b5",
+      "comment": "4. Clicar em \"Adicionar anotação\"",
+      "command": "click",
+      "target": "css=.widget-toolbox > .btn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "05e82dde-19fb-40ce-8ca9-c77c0dad3b6c",
+      "comment": "Validação",
+      "command": "assertText",
+      "target": "css=.bugnote-note",
+      "targets": [
+        ["css=.bugnote-note", "css:finder"],
+        ["xpath=//tr[@id='c35']/td[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/table/tbody/tr/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Isso é um teste de anotação')]", "xpath:innerText"]
+      ],
+      "value": "Isso é um teste de anotação"
+    }]
+  }, {
+    "id": "1ce5f019-b4cf-4877-bb23-38660ace4a39",
+    "name": "28 - Deletar Filtro",
+    "commands": [{
+      "id": "460a4808-39e9-4810-9530-9031c0fbdf09",
+      "comment": "DEVE HAVER APENAS UM FILTRO CRIADO",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e0b0536b-3625-45b8-9f43-a0e1195d9f89",
+      "comment": "Autenticar usuário",
+      "command": "run",
+      "target": "01 - Realizar Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9fc7d3f2-9f85-4966-9b8e-0ec7405aca13",
+      "comment": "1. Clique em \"Ver Tarefas\"",
+      "command": "click",
+      "target": "css=a > .fa-list-alt",
+      "targets": [
+        ["css=a > .fa-list-alt", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/i", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e14c9b63-5cbb-42b8-8963-0086b81b491c",
+      "comment": "2. Clicar no elemento \"settings\" na sessão \"Filtros\"",
+      "command": "click",
+      "target": "css=.fa-bars",
+      "targets": [
+        ["css=.fa-bars", "css:finder"],
+        ["xpath=//div[@id='filter']/div/div/div/a/i", "xpath:idRelative"],
+        ["xpath=//div/div/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bd802ee-4ea7-4a93-9cc1-9dcccc671e38",
+      "comment": "3. Clicar gerenciar filtros",
+      "command": "click",
+      "target": "linkText=Gerenciar Filtros",
+      "targets": [
+        ["linkText=Gerenciar Filtros", "linkText"],
+        ["css=.dropdown-menu > li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gerenciar Filtros')]", "xpath:link"],
+        ["xpath=//div[@id='filter']/div/div/div/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'manage_filter_page.php')]", "xpath:href"],
+        ["xpath=//div/div/div/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'  Gerenciar Filtros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "04495526-da2b-4b6e-8f32-69dd45086b75",
+      "comment": "4. Clicar em \"Deletar\"",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .pull-left:nth-child(3) .btn",
+      "targets": [
+        ["css=tr:nth-child(1) .pull-left:nth-child(3) .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div[2]/div[2]/div/table/tbody/tr/td[6]/div[3]/form/fieldset/button", "xpath:idRelative"],
+        ["xpath=//div[3]/form/fieldset/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Deletar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca86accc-3cd5-48a2-9e9a-d01df1bd571f",
+      "comment": "5. Clicar em \"Apagar Filtro\"",
+      "command": "click",
+      "target": "css=.btn-white",
+      "targets": [
+        ["css=.btn-white", "css:finder"],
+        ["xpath=//input[@value='Apagar Filtro']", "xpath:attributes"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div[2]/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0ade56a-ef2a-4a73-b811-705cb6b7d9bf",
+      "comment": "6. Clicar em \"Clique aqui para prosseguir\"",
+      "command": "click",
+      "target": "linkText=Clique aqui para prosseguir",
+      "targets": [
+        ["css=.btn-white", "css:finder"],
+        ["xpath=//input[@value='Apagar Filtro']", "xpath:attributes"],
+        ["xpath=//div[@id='main-container']/div[2]/div[2]/div/div/div[2]/form/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2e98be2-5212-4732-bcc5-5f4c0becade0",
+      "comment": "Validar ",
+      "command": "verifyElementNotPresent",
+      "target": "css=td:nth-child(1)",
+      "targets": [],
+      "value": "Usuários monitorando esta tarefa"
+    }]
+  }, {
+    "id": "d97bc83e-290e-4a1b-864e-ba4a8d19767b",
+    "name": "02 - Realizar login e impedir multiplas sessões / logout",
+    "commands": [{
+      "id": "75bb6eb1-f834-4ba5-895b-884041fb8624",
+      "comment": "1. Acessar página ",
+      "command": "open",
+      "target": "/login_page.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "736b4c90-f8a8-4698-8812-5a7a8282c6e1",
+      "comment": "2. Preencha campo \"USUARIO\" com \"nome de usuario\"",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/label/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "Murilo"
+    }, {
+      "id": "4ff5d8bd-292b-43b6-89a1-c4b8ccc16e79",
+      "comment": "3. Clicar em \"Entrar\"",
+      "command": "click",
+      "target": "css=.width-40",
+      "targets": [
+        ["css=.width-40", "css:finder"],
+        ["xpath=//input[@value='Entrar']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c6527b3-c350-42fa-93e0-655359b53787",
+      "comment": "4. Preencha campo \"SENHA\" com \"senha de usuario\"",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/label/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "Mu.81726559"
+    }, {
+      "id": "7fd39d99-a529-4da1-b24d-7812d00bdc9f",
+      "comment": "5. Marcar a opção \"Somente permitir que sua sessão seja utilizada a partir deste endereço IP.\"",
+      "command": "check",
+      "target": "id=secure-session",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aaac8dce-1214-4900-959b-a2e145450197",
+      "comment": "6. Desmarcar a opção \"Mantenha-me conectado(a)\"",
+      "command": "uncheck",
+      "target": "id=remember-login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0a9d0a26-69ce-4703-b842-52aac17480b3",
+      "comment": "7. Clicar em \"Entrar\"",
+      "command": "click",
+      "target": "css=.width-40",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e36f2b00-3152-438a-a292-5a55048bf715",
+      "comment": "Validação (Usuario autenticado)",
+      "command": "assertText",
+      "target": "linkText=Murilo ( murilohara.6559@aluno.saojudas.br )",
+      "targets": [],
+      "value": "Murilo ( murilohara.6559@aluno.saojudas.br )"
+    }]
+  }, {
+    "id": "9219105a-9291-4909-beae-57ec1e7a3f98",
+    "name": "07 - Realizar login e impedir queda de sessão",
+    "commands": [{
+      "id": "2747b51b-2ba2-468c-98f5-6cdf20396dc0",
+      "comment": "1. Acessar página ",
+      "command": "open",
+      "target": "/login_page.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c7e3703c-da05-473e-a81c-81a2b738e6dc",
+      "comment": "2. Preencha campo \"USUARIO\" com \"nome de usuario\"",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/label/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "Murilo"
+    }, {
+      "id": "0f9d8272-ff84-45f8-96e8-7e963450f8cc",
+      "comment": "3. Clicar em \"Entrar\"",
+      "command": "click",
+      "target": "css=.width-40",
+      "targets": [
+        ["css=.width-40", "css:finder"],
+        ["xpath=//input[@value='Entrar']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c814446-f7f0-4ecd-9218-c75e82b27c5e",
+      "comment": "4. Preencha campo \"SENHA\" com \"senha de usuario\"",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/label/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "Mu.81726559"
+    }, {
+      "id": "5c988bed-13a4-4bdb-8a28-4314c7b86a0c",
+      "comment": "5. Desmarcar \"Somente permitir que sua sessão seja utilizada a partir deste endereço IP.\"",
+      "command": "uncheck",
+      "target": "id=secure-session",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d0b7b7a0-e55e-4e11-ad80-bf6628227164",
+      "comment": "6. Marcar a opção \"Mantenha-me conectado(a)\"",
+      "command": "check",
+      "target": "id=remember-login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6c039d3-548d-4bee-ba43-d4b6ce3fd86c",
+      "comment": "7. Clicar em \"Entrar\"",
+      "command": "click",
+      "target": "css=.width-40",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "58f57470-11ac-4b92-bf53-5ea115237799",
+      "comment": "Validação (Usuario autenticado)",
+      "command": "assertText",
+      "target": "linkText=Murilo ( murilohara.6559@aluno.saojudas.br )",
+      "targets": [],
+      "value": "Murilo ( murilohara.6559@aluno.saojudas.br )"
+    }]
+  }],
+  "suites": [{
+    "id": "f005e04d-53bc-408b-9447-aeb172bc64af",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["21a42cfe-d9a6-4a0b-a1d3-035887cc7d28"]
+  }],
+  "urls": ["https://mantis.saojudas.base2.com.br/"],
+  "plugins": []
+}
