@@ -1,3 +1,9 @@
+<p align="center"> 
+ 
+  <img src="https://user-images.githubusercontent.com/62716718/151469804-dde8d3a6-5872-4778-a2e7-7983bedb9cde.png" alt ="selenium"/> 
+  
+</p>
+
 # Automacao de testes
 
 Projeto contendo arquivos para apresentação de automação de testes à Universidade São Judas Tadeu
